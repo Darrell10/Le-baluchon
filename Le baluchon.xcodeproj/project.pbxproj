@@ -9,21 +9,31 @@
 /* Begin PBXBuildFile section */
 		B60CC045236CA744007894A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60CC044236CA744007894A0 /* AppDelegate.swift */; };
 		B60CC047236CA744007894A0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60CC046236CA744007894A0 /* SceneDelegate.swift */; };
-		B60CC049236CA744007894A0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60CC048236CA744007894A0 /* ViewController.swift */; };
 		B60CC04C236CA744007894A0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B60CC04A236CA744007894A0 /* Main.storyboard */; };
 		B60CC04E236CA745007894A0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B60CC04D236CA745007894A0 /* Assets.xcassets */; };
 		B60CC051236CA745007894A0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B60CC04F236CA745007894A0 /* LaunchScreen.storyboard */; };
+		B60CC05A236CA7C1007894A0 /* MoneyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60CC059236CA7C1007894A0 /* MoneyViewController.swift */; };
+		B60CC060236CA8A9007894A0 /* TranslateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60CC05F236CA8A9007894A0 /* TranslateViewController.swift */; };
+		B60CC062236CA912007894A0 /* MeteoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60CC061236CA912007894A0 /* MeteoViewController.swift */; };
+		B60CC064236CA9AC007894A0 /* Translate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60CC063236CA9AC007894A0 /* Translate.swift */; };
+		B60CC066236CA9C2007894A0 /* MeteoApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60CC065236CA9C2007894A0 /* MeteoApi.swift */; };
+		B60CC068236CA9E1007894A0 /* MoneyConvert.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60CC067236CA9E1007894A0 /* MoneyConvert.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		B60CC041236CA744007894A0 /* Le baluchon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Le baluchon.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B60CC044236CA744007894A0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B60CC046236CA744007894A0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		B60CC048236CA744007894A0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B60CC04B236CA744007894A0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B60CC04D236CA745007894A0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B60CC050236CA745007894A0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B60CC052236CA745007894A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B60CC059236CA7C1007894A0 /* MoneyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyViewController.swift; sourceTree = "<group>"; };
+		B60CC05F236CA8A9007894A0 /* TranslateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateViewController.swift; sourceTree = "<group>"; };
+		B60CC061236CA912007894A0 /* MeteoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeteoViewController.swift; sourceTree = "<group>"; };
+		B60CC063236CA9AC007894A0 /* Translate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Translate.swift; sourceTree = "<group>"; };
+		B60CC065236CA9C2007894A0 /* MeteoApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeteoApi.swift; sourceTree = "<group>"; };
+		B60CC067236CA9E1007894A0 /* MoneyConvert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyConvert.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +66,52 @@
 		B60CC043236CA744007894A0 /* Le baluchon */ = {
 			isa = PBXGroup;
 			children = (
-				B60CC044236CA744007894A0 /* AppDelegate.swift */,
-				B60CC046236CA744007894A0 /* SceneDelegate.swift */,
-				B60CC048236CA744007894A0 /* ViewController.swift */,
-				B60CC04A236CA744007894A0 /* Main.storyboard */,
-				B60CC04D236CA745007894A0 /* Assets.xcassets */,
-				B60CC04F236CA745007894A0 /* LaunchScreen.storyboard */,
+				B60CC05E236CA853007894A0 /* Supporting Files */,
+				B60CC05D236CA844007894A0 /* Modele */,
+				B60CC05B236CA82E007894A0 /* View */,
+				B60CC058236CA7A8007894A0 /* Controller */,
 				B60CC052236CA745007894A0 /* Info.plist */,
 			);
 			path = "Le baluchon";
+			sourceTree = "<group>";
+		};
+		B60CC058236CA7A8007894A0 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B60CC059236CA7C1007894A0 /* MoneyViewController.swift */,
+				B60CC05F236CA8A9007894A0 /* TranslateViewController.swift */,
+				B60CC061236CA912007894A0 /* MeteoViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		B60CC05B236CA82E007894A0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B60CC04F236CA745007894A0 /* LaunchScreen.storyboard */,
+				B60CC04A236CA744007894A0 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B60CC05D236CA844007894A0 /* Modele */ = {
+			isa = PBXGroup;
+			children = (
+				B60CC063236CA9AC007894A0 /* Translate.swift */,
+				B60CC065236CA9C2007894A0 /* MeteoApi.swift */,
+				B60CC067236CA9E1007894A0 /* MoneyConvert.swift */,
+			);
+			path = Modele;
+			sourceTree = "<group>";
+		};
+		B60CC05E236CA853007894A0 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B60CC046236CA744007894A0 /* SceneDelegate.swift */,
+				B60CC044236CA744007894A0 /* AppDelegate.swift */,
+				B60CC04D236CA745007894A0 /* Assets.xcassets */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,9 +185,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B60CC049236CA744007894A0 /* ViewController.swift in Sources */,
+				B60CC062236CA912007894A0 /* MeteoViewController.swift in Sources */,
+				B60CC05A236CA7C1007894A0 /* MoneyViewController.swift in Sources */,
+				B60CC064236CA9AC007894A0 /* Translate.swift in Sources */,
+				B60CC060236CA8A9007894A0 /* TranslateViewController.swift in Sources */,
 				B60CC045236CA744007894A0 /* AppDelegate.swift in Sources */,
 				B60CC047236CA744007894A0 /* SceneDelegate.swift in Sources */,
+				B60CC068236CA9E1007894A0 /* MoneyConvert.swift in Sources */,
+				B60CC066236CA9C2007894A0 /* MeteoApi.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,6 +339,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = U43D64A3HX;
 				INFOPLIST_FILE = "Le baluchon/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -294,7 +347,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "fr.port.frederick.Le-baluchon";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -305,6 +358,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = U43D64A3HX;
 				INFOPLIST_FILE = "Le baluchon/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -312,7 +366,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "fr.port.frederick.Le-baluchon";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
