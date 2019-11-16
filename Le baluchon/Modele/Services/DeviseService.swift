@@ -8,35 +8,30 @@
 
 import Foundation
 
-enum NetworkError: Error {
-    case domainError
-    case decodingError
-    
-}
-
 class DeviseService {
     
-    private let url = URL(string: "http://data.fixer.io/api/latest?access_key=6cd8ee3ddb7399e53f7b1ab50d44a56c&symbols=USD")
-}
-
-extension DeviseService {
-    
-    func getDevises(url: URL, completion: @escaping (Result<[Devises], NetworkError>) -> Void) {
+    func getCurrency(completion: @escaping (Result<[Devises], Error>) -> Void) {
+        
+        let urlString = "http://data.fixer.io/api/latest?access_key=6cd8ee3ddb7399e53f7b1ab50d44a56c&symbols=USD"
+        guard let url = URL(string: urlString) else { return }
+        
         URLSession.shared.dataTask(with: url) { (data, response, error) in
-            guard let data = data, error == nil else {
-                if let error = error as NSError?, error.domain == NSURLErrorDomain {
-                    completion(.failure(.domainError))
-                }
+            DispatchQueue.main.async {
+            if let error = error {
+                completion(.failure(error))
                 return
             }
             do {
-                let devises = try JSONDecoder().decode([Devises].self, from: data)
-                completion(.success(devises))
-            } catch {
-                completion(.failure(.decodingError))
+                let devise = try JSONDecoder().decode([Devises].self, from: data!)
+                completion(.success(devise))
+                
+            } catch  let jsonError {
+                completion(.failure(jsonError))
+                }
             }
-            
         }.resume()
     }
 }
+
+
 

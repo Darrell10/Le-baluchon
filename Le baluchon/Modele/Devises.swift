@@ -10,7 +10,8 @@ import Foundation
 
 struct Devises: Decodable {
     let timestamp: Int
-    let base, date: String
+    let base: String
+    let date: String
     let rates: [String: Double]
 }
     

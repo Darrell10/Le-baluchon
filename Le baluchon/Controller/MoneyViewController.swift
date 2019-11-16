@@ -11,28 +11,22 @@ import UIKit
 class MoneyViewController: UIViewController {
     
     let deviseService = DeviseService()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        deviseService.getCurrency { (success, devise) in
-                   //self.toggleActivityIndicator(shown: false)
-                   if success, let devise = devise {
-                       self.update(devise: devise)
-                       
-                   } else {
-                       self.presentAlert()
-                   }
-               }
+        deviseService.getCurrency { (res) in
+            switch res {
+            case .success:
+                print("Sa marche")
+            case . failure:
+                self.presentAlert()
+            }
+        }
     }
 
     @IBAction func convertDeviseButton(_ sender: Any) {
-       
+        
     }
-    
-    private func update(devise: Devises) {
-        print(devise.date)
-       }
     
 }
 

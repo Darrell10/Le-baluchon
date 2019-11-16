@@ -18,7 +18,6 @@
 		B60CC064236CA9AC007894A0 /* Translate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60CC063236CA9AC007894A0 /* Translate.swift */; };
 		B60CC068236CA9E1007894A0 /* Devises.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60CC067236CA9E1007894A0 /* Devises.swift */; };
 		B6105F042377285E00C041B5 /* WeatherApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6105F032377285E00C041B5 /* WeatherApi.swift */; };
-		B6105F0623772D9600C041B5 /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6105F0523772D9600C041B5 /* WeatherService.swift */; };
 		B680648323799979007F72B4 /* DeviseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B680648223799979007F72B4 /* DeviseService.swift */; };
 		B680648523799CD6007F72B4 /* ApiKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = B680648423799CD6007F72B4 /* ApiKeys.swift */; };
 /* End PBXBuildFile section */
@@ -37,7 +36,6 @@
 		B60CC063236CA9AC007894A0 /* Translate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Translate.swift; sourceTree = "<group>"; };
 		B60CC067236CA9E1007894A0 /* Devises.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Devises.swift; sourceTree = "<group>"; };
 		B6105F032377285E00C041B5 /* WeatherApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherApi.swift; sourceTree = "<group>"; };
-		B6105F0523772D9600C041B5 /* WeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
 		B680648223799979007F72B4 /* DeviseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviseService.swift; sourceTree = "<group>"; };
 		B680648423799CD6007F72B4 /* ApiKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiKeys.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -125,7 +123,6 @@
 		B68064862379A5E0007F72B4 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				B6105F0523772D9600C041B5 /* WeatherService.swift */,
 				B680648223799979007F72B4 /* DeviseService.swift */,
 			);
 			path = Services;
@@ -204,7 +201,6 @@
 			files = (
 				B6105F042377285E00C041B5 /* WeatherApi.swift in Sources */,
 				B680648523799CD6007F72B4 /* ApiKeys.swift in Sources */,
-				B6105F0623772D9600C041B5 /* WeatherService.swift in Sources */,
 				B60CC062236CA912007894A0 /* WeatherViewController.swift in Sources */,
 				B60CC05A236CA7C1007894A0 /* MoneyViewController.swift in Sources */,
 				B60CC064236CA9AC007894A0 /* Translate.swift in Sources */,
