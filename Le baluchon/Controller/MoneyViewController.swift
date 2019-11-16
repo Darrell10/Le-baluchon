@@ -9,22 +9,37 @@
 import UIKit
 
 class MoneyViewController: UIViewController {
+    
+    let deviseService = DeviseService()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        deviseService.getCurrency { (success, devise) in
+                   //self.toggleActivityIndicator(shown: false)
+                   if success, let devise = devise {
+                       self.update(devise: devise)
+                       
+                   } else {
+                       self.presentAlert()
+                   }
+               }
+    }
+
+    @IBAction func convertDeviseButton(_ sender: Any) {
+       
     }
     
+    private func update(devise: Devises) {
+        print(devise.date)
+       }
+    
+}
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+extension MoneyViewController {
+    private func presentAlert() {
+        let alertVC = UIAlertController(title: "Error", message: "Devise download failed", preferredStyle: .alert)
+        alertVC.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+        present(alertVC, animated: true, completion: nil)
     }
-    */
-
 }

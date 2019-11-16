@@ -14,10 +14,13 @@
 		B60CC051236CA745007894A0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B60CC04F236CA745007894A0 /* LaunchScreen.storyboard */; };
 		B60CC05A236CA7C1007894A0 /* MoneyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60CC059236CA7C1007894A0 /* MoneyViewController.swift */; };
 		B60CC060236CA8A9007894A0 /* TranslateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60CC05F236CA8A9007894A0 /* TranslateViewController.swift */; };
-		B60CC062236CA912007894A0 /* MeteoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60CC061236CA912007894A0 /* MeteoViewController.swift */; };
+		B60CC062236CA912007894A0 /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60CC061236CA912007894A0 /* WeatherViewController.swift */; };
 		B60CC064236CA9AC007894A0 /* Translate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60CC063236CA9AC007894A0 /* Translate.swift */; };
-		B60CC066236CA9C2007894A0 /* MeteoApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60CC065236CA9C2007894A0 /* MeteoApi.swift */; };
-		B60CC068236CA9E1007894A0 /* MoneyConvert.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60CC067236CA9E1007894A0 /* MoneyConvert.swift */; };
+		B60CC068236CA9E1007894A0 /* Devises.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60CC067236CA9E1007894A0 /* Devises.swift */; };
+		B6105F042377285E00C041B5 /* WeatherApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6105F032377285E00C041B5 /* WeatherApi.swift */; };
+		B6105F0623772D9600C041B5 /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6105F0523772D9600C041B5 /* WeatherService.swift */; };
+		B680648323799979007F72B4 /* DeviseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B680648223799979007F72B4 /* DeviseService.swift */; };
+		B680648523799CD6007F72B4 /* ApiKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = B680648423799CD6007F72B4 /* ApiKeys.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,10 +33,13 @@
 		B60CC052236CA745007894A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B60CC059236CA7C1007894A0 /* MoneyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyViewController.swift; sourceTree = "<group>"; };
 		B60CC05F236CA8A9007894A0 /* TranslateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateViewController.swift; sourceTree = "<group>"; };
-		B60CC061236CA912007894A0 /* MeteoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeteoViewController.swift; sourceTree = "<group>"; };
+		B60CC061236CA912007894A0 /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
 		B60CC063236CA9AC007894A0 /* Translate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Translate.swift; sourceTree = "<group>"; };
-		B60CC065236CA9C2007894A0 /* MeteoApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeteoApi.swift; sourceTree = "<group>"; };
-		B60CC067236CA9E1007894A0 /* MoneyConvert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyConvert.swift; sourceTree = "<group>"; };
+		B60CC067236CA9E1007894A0 /* Devises.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Devises.swift; sourceTree = "<group>"; };
+		B6105F032377285E00C041B5 /* WeatherApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherApi.swift; sourceTree = "<group>"; };
+		B6105F0523772D9600C041B5 /* WeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
+		B680648223799979007F72B4 /* DeviseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviseService.swift; sourceTree = "<group>"; };
+		B680648423799CD6007F72B4 /* ApiKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiKeys.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,7 +86,7 @@
 			children = (
 				B60CC059236CA7C1007894A0 /* MoneyViewController.swift */,
 				B60CC05F236CA8A9007894A0 /* TranslateViewController.swift */,
-				B60CC061236CA912007894A0 /* MeteoViewController.swift */,
+				B60CC061236CA912007894A0 /* WeatherViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -97,9 +103,11 @@
 		B60CC05D236CA844007894A0 /* Modele */ = {
 			isa = PBXGroup;
 			children = (
+				B68064862379A5E0007F72B4 /* Services */,
 				B60CC063236CA9AC007894A0 /* Translate.swift */,
-				B60CC065236CA9C2007894A0 /* MeteoApi.swift */,
-				B60CC067236CA9E1007894A0 /* MoneyConvert.swift */,
+				B60CC067236CA9E1007894A0 /* Devises.swift */,
+				B6105F032377285E00C041B5 /* WeatherApi.swift */,
+				B680648423799CD6007F72B4 /* ApiKeys.swift */,
 			);
 			path = Modele;
 			sourceTree = "<group>";
@@ -112,6 +120,15 @@
 				B60CC04D236CA745007894A0 /* Assets.xcassets */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B68064862379A5E0007F72B4 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				B6105F0523772D9600C041B5 /* WeatherService.swift */,
+				B680648223799979007F72B4 /* DeviseService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -185,14 +202,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B60CC062236CA912007894A0 /* MeteoViewController.swift in Sources */,
+				B6105F042377285E00C041B5 /* WeatherApi.swift in Sources */,
+				B680648523799CD6007F72B4 /* ApiKeys.swift in Sources */,
+				B6105F0623772D9600C041B5 /* WeatherService.swift in Sources */,
+				B60CC062236CA912007894A0 /* WeatherViewController.swift in Sources */,
 				B60CC05A236CA7C1007894A0 /* MoneyViewController.swift in Sources */,
 				B60CC064236CA9AC007894A0 /* Translate.swift in Sources */,
 				B60CC060236CA8A9007894A0 /* TranslateViewController.swift in Sources */,
 				B60CC045236CA744007894A0 /* AppDelegate.swift in Sources */,
 				B60CC047236CA744007894A0 /* SceneDelegate.swift in Sources */,
-				B60CC068236CA9E1007894A0 /* MoneyConvert.swift in Sources */,
-				B60CC066236CA9C2007894A0 /* MeteoApi.swift in Sources */,
+				B60CC068236CA9E1007894A0 /* Devises.swift in Sources */,
+				B680648323799979007F72B4 /* DeviseService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
