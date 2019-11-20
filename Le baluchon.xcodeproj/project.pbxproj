@@ -12,7 +12,7 @@
 		B60CC04C236CA744007894A0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B60CC04A236CA744007894A0 /* Main.storyboard */; };
 		B60CC04E236CA745007894A0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B60CC04D236CA745007894A0 /* Assets.xcassets */; };
 		B60CC051236CA745007894A0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B60CC04F236CA745007894A0 /* LaunchScreen.storyboard */; };
-		B60CC05A236CA7C1007894A0 /* MoneyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60CC059236CA7C1007894A0 /* MoneyViewController.swift */; };
+		B60CC05A236CA7C1007894A0 /* ConvertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60CC059236CA7C1007894A0 /* ConvertViewController.swift */; };
 		B60CC060236CA8A9007894A0 /* TranslateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60CC05F236CA8A9007894A0 /* TranslateViewController.swift */; };
 		B60CC062236CA912007894A0 /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60CC061236CA912007894A0 /* WeatherViewController.swift */; };
 		B60CC064236CA9AC007894A0 /* Translate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60CC063236CA9AC007894A0 /* Translate.swift */; };
@@ -30,7 +30,7 @@
 		B60CC04D236CA745007894A0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B60CC050236CA745007894A0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B60CC052236CA745007894A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B60CC059236CA7C1007894A0 /* MoneyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyViewController.swift; sourceTree = "<group>"; };
+		B60CC059236CA7C1007894A0 /* ConvertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertViewController.swift; sourceTree = "<group>"; };
 		B60CC05F236CA8A9007894A0 /* TranslateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateViewController.swift; sourceTree = "<group>"; };
 		B60CC061236CA912007894A0 /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
 		B60CC063236CA9AC007894A0 /* Translate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Translate.swift; sourceTree = "<group>"; };
@@ -82,7 +82,7 @@
 		B60CC058236CA7A8007894A0 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				B60CC059236CA7C1007894A0 /* MoneyViewController.swift */,
+				B60CC059236CA7C1007894A0 /* ConvertViewController.swift */,
 				B60CC05F236CA8A9007894A0 /* TranslateViewController.swift */,
 				B60CC061236CA912007894A0 /* WeatherViewController.swift */,
 			);
@@ -202,7 +202,7 @@
 				B6105F042377285E00C041B5 /* WeatherApi.swift in Sources */,
 				B680648523799CD6007F72B4 /* ApiKeys.swift in Sources */,
 				B60CC062236CA912007894A0 /* WeatherViewController.swift in Sources */,
-				B60CC05A236CA7C1007894A0 /* MoneyViewController.swift in Sources */,
+				B60CC05A236CA7C1007894A0 /* ConvertViewController.swift in Sources */,
 				B60CC064236CA9AC007894A0 /* Translate.swift in Sources */,
 				B60CC060236CA8A9007894A0 /* TranslateViewController.swift in Sources */,
 				B60CC045236CA744007894A0 /* AppDelegate.swift in Sources */,

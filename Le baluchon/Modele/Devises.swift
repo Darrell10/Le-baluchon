@@ -9,10 +9,16 @@
 import Foundation
 
 struct Devises: Decodable {
-    let timestamp: Int
-    let base: String
     let date: String
     let rates: [String: Double]
+}
+
+extension Devises {
+    static func convert(_ value: Double, with rate: Double) -> String {
+        let convertResult = (value * rate)
+
+        return String(format: "%.2f", convertResult)
+    }
 }
     
    

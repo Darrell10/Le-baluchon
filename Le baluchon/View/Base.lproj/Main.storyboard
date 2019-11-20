@@ -246,7 +246,7 @@
         <!--Devises-->
         <scene sceneID="YLi-eK-dai">
             <objects>
-                <viewController id="9jk-20-c0t" customClass="MoneyViewController" customModule="Le_baluchon" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="9jk-20-c0t" customClass="ConvertViewController" customModule="Le_baluchon" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cQt-4M-O62">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -261,7 +261,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="MAg-Ug-MCa">
-                                <rect key="frame" x="20" y="124" width="335" height="305"/>
+                                <rect key="frame" x="20" y="124" width="335" height="325"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xyo-iQ-SsO">
                                         <rect key="frame" x="0.0" y="0.0" width="335" height="100"/>
@@ -275,10 +275,13 @@
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="9U0-eM-tf2">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="20" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="9U0-eM-tf2">
                                                 <rect key="frame" x="0.0" y="38" width="335" height="54"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="9jk-20-c0t" id="MOu-nD-rWn"/>
+                                                </connections>
                                             </textField>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -293,10 +296,10 @@
                                             <constraint firstItem="tHN-YC-ZMe" firstAttribute="top" secondItem="Xyo-iQ-SsO" secondAttribute="top" id="wNW-pM-fRp"/>
                                         </constraints>
                                     </view>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5vf-ZH-r9x">
-                                        <rect key="frame" x="0.0" y="150" width="335" height="30"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" title="Convert">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5vf-ZH-r9x">
+                                        <rect key="frame" x="0.0" y="150" width="335" height="50"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" image="icons8-currency_exchange_filled">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
@@ -304,7 +307,7 @@
                                         </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kQy-Y9-4mS">
-                                        <rect key="frame" x="0.0" y="230" width="335" height="75"/>
+                                        <rect key="frame" x="0.0" y="250" width="335" height="75"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CMG-Jj-3an">
                                                 <rect key="frame" x="0.0" y="10" width="335" height="65"/>
@@ -326,6 +329,7 @@
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="MAg-Ug-MCa" firstAttribute="leading" secondItem="e9d-01-hRz" secondAttribute="leading" constant="20" id="1Yt-MU-S84"/>
                             <constraint firstItem="e9d-01-hRz" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="MAg-Ug-MCa" secondAttribute="bottom" constant="20" id="C9g-Qf-2Od"/>
@@ -336,15 +340,28 @@
                             <constraint firstItem="e9d-01-hRz" firstAttribute="trailing" secondItem="MAg-Ug-MCa" secondAttribute="trailing" constant="20" id="qHn-Gs-HEp"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="e9d-01-hRz"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="0Fq-uZ-zdw" appends="YES" id="HE7-dn-2Ep"/>
+                        </connections>
                     </view>
                     <tabBarItem key="tabBarItem" title="Devises" image="icons8-dollar_sign_7" id="EHX-sK-1MZ"/>
+                    <connections>
+                        <outlet property="convertResult" destination="CMG-Jj-3an" id="3bF-0x-xHQ"/>
+                        <outlet property="dataTextField" destination="9U0-eM-tf2" id="wvE-Q7-pBa"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wua-RW-uYs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="0Fq-uZ-zdw">
+                    <connections>
+                        <action selector="dismissKeyboard:" destination="9jk-20-c0t" id="Ia1-jf-Dze"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="484" y="-911"/>
         </scene>
     </scenes>
     <resources>
+        <image name="icons8-currency_exchange_filled" width="50" height="50"/>
         <image name="icons8-dollar_sign_7" width="25" height="25"/>
         <image name="icons8-requires_interpreter_filled" width="50" height="50"/>
         <image name="icons8-sun_filled" width="25" height="25"/>
