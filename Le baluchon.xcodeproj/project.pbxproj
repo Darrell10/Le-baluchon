@@ -103,6 +103,7 @@
 		B60CC043236CA744007894A0 /* Le baluchon */ = {
 			isa = PBXGroup;
 			children = (
+				B680648423799CD6007F72B4 /* ApiKeys.swift */,
 				B60CC05E236CA853007894A0 /* Supporting Files */,
 				B60CC05D236CA844007894A0 /* Modele */,
 				B60CC05B236CA82E007894A0 /* View */,
@@ -138,7 +139,6 @@
 				B60CC063236CA9AC007894A0 /* Translate.swift */,
 				B60CC067236CA9E1007894A0 /* Devises.swift */,
 				B6105F032377285E00C041B5 /* WeatherApi.swift */,
-				B680648423799CD6007F72B4 /* ApiKeys.swift */,
 				B6AC31862389962700D5C272 /* NetWorkError.swift */,
 			);
 			path = Modele;
