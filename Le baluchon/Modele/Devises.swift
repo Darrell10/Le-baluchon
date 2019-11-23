@@ -16,7 +16,6 @@ struct Devises: Decodable {
 extension Devises {
     static func convert(_ value: Double, with rate: Double) -> String {
         let convertResult = (value * rate)
-
         return String(format: "%.2f", convertResult)
     }
 }

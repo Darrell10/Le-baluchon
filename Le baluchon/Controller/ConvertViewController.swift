@@ -10,21 +10,28 @@ import UIKit
 
 class ConvertViewController: UIViewController {
     
+// MARK: - Property
+    
+    private var updateRate: Double = 1.00
+    private var updateDate: String = "01/01/1970"
+    
     @IBOutlet weak var dataTextField: UITextField!
     @IBOutlet weak var convertResult: UILabel!
 
-    let deviseService = DeviseService()
-    private var rate: Double = 1.10
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-    }
-
-    @IBAction func convertDeviseButton(_ sender: Any) {
-        launchConvert()
     }
 }
+
+// MARK: - Convert Action Button
+
+extension ConvertViewController {
+    @IBAction func convertDeviseButton(_ sender: Any) {
+        convertDevise()
+    }
+}
+
+// MARK: - Dismiss Keyboard
 
 extension ConvertViewController : UITextFieldDelegate{
     @IBAction func dismissKeyboard(_ sender: UITapGestureRecognizer) {
@@ -36,13 +43,15 @@ extension ConvertViewController : UITextFieldDelegate{
     }
 }
 
+// MARK: - Convert Display to Double
+
 extension ConvertViewController {
-    private func launchConvert() {
+    private func convertDevise() {
         guard let amount = dataTextField.text else { return }
-        checkInputValidity(input: amount)
+        convertDataToDouble(input: amount)
     }
     
-    private func checkInputValidity(input: String) {
+    private func convertDataToDouble(input: String) {
         if let number = Double(input.replacingOccurrences(of: ",", with: ".")) {
             requestConversion(for: number)
         } else {
@@ -51,20 +60,24 @@ extension ConvertViewController {
     }
     
     private func requestConversion(for amount: Double) {
-        deviseService.getCurrency { (res) in
-            switch res {
-            case .success:
-                self.updateDisplay(with: amount, and: self.rate)
-            case . failure:
+        DeviseService.shared.getCurrency { (result) in
+            switch result {
+            case .success(let ratesData):
+                self.updateDate = ratesData.date
+                self.updateRate = ratesData.rates["USD"] ?? 0.00
+                self.updateDisplay(with: amount, and: self.updateRate)
+            case .failure:
                 self.presentAlert()
             }
         }
     }
     
-    private func updateDisplay(with amount: Double, and rate: Double) {
-        convertResult.text = Devises.convert(amount, with: rate)
+    private func updateDisplay(with amount: Double, and rates: Double) {
+        convertResult.text = ( " \(Devises.convert(amount, with: updateRate)) $")
     }
 }
+
+// MARK: - Alert controller
 
 extension ConvertViewController {
     private func presentAlert() {
