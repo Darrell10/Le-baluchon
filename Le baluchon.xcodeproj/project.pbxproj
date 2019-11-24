@@ -25,6 +25,7 @@
 		B6AC6C7B238932DE00175298 /* Convert.json in Resources */ = {isa = PBXBuildFile; fileRef = B6AC6C7A238932DE00175298 /* Convert.json */; };
 		B6AC6C7D2389330700175298 /* ConvertFakeResponseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AC6C7C2389330700175298 /* ConvertFakeResponseData.swift */; };
 		B6AC6C7F2389347C00175298 /* ConvertURLSessionFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AC6C7E2389347C00175298 /* ConvertURLSessionFake.swift */; };
+		B6CC47CC238AEDB2000BF1DA /* ApiKeys.plist in Resources */ = {isa = PBXBuildFile; fileRef = B6CC47CB238AEDB2000BF1DA /* ApiKeys.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,7 @@
 		B6AC6C7A238932DE00175298 /* Convert.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Convert.json; sourceTree = "<group>"; };
 		B6AC6C7C2389330700175298 /* ConvertFakeResponseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertFakeResponseData.swift; sourceTree = "<group>"; };
 		B6AC6C7E2389347C00175298 /* ConvertURLSessionFake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertURLSessionFake.swift; sourceTree = "<group>"; };
+		B6CC47CB238AEDB2000BF1DA /* ApiKeys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = ApiKeys.plist; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				B60CC05B236CA82E007894A0 /* View */,
 				B60CC058236CA7A8007894A0 /* Controller */,
 				B60CC052236CA745007894A0 /* Info.plist */,
+				B6CC47CB238AEDB2000BF1DA /* ApiKeys.plist */,
 			);
 			path = "Le baluchon";
 			sourceTree = "<group>";
@@ -263,6 +266,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B60CC051236CA745007894A0 /* LaunchScreen.storyboard in Resources */,
+				B6CC47CC238AEDB2000BF1DA /* ApiKeys.plist in Resources */,
 				B60CC04E236CA745007894A0 /* Assets.xcassets in Resources */,
 				B60CC04C236CA744007894A0 /* Main.storyboard in Resources */,
 			);
