@@ -26,6 +26,7 @@
 		B6AC6C7D2389330700175298 /* ConvertFakeResponseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AC6C7C2389330700175298 /* ConvertFakeResponseData.swift */; };
 		B6AC6C7F2389347C00175298 /* ConvertURLSessionFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AC6C7E2389347C00175298 /* ConvertURLSessionFake.swift */; };
 		B6CC47CC238AEDB2000BF1DA /* ApiKeys.plist in Resources */ = {isa = PBXBuildFile; fileRef = B6CC47CB238AEDB2000BF1DA /* ApiKeys.plist */; };
+		B6CC47CE238AEF19000BF1DA /* ApiKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6CC47CD238AEF19000BF1DA /* ApiKeys.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,7 @@
 		B6AC6C7C2389330700175298 /* ConvertFakeResponseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertFakeResponseData.swift; sourceTree = "<group>"; };
 		B6AC6C7E2389347C00175298 /* ConvertURLSessionFake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertURLSessionFake.swift; sourceTree = "<group>"; };
 		B6CC47CB238AEDB2000BF1DA /* ApiKeys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = ApiKeys.plist; sourceTree = SOURCE_ROOT; };
+		B6CC47CD238AEF19000BF1DA /* ApiKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiKeys.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 				B60CC058236CA7A8007894A0 /* Controller */,
 				B60CC052236CA745007894A0 /* Info.plist */,
 				B6CC47CB238AEDB2000BF1DA /* ApiKeys.plist */,
+				B6CC47CD238AEF19000BF1DA /* ApiKeys.swift */,
 			);
 			path = "Le baluchon";
 			sourceTree = "<group>";
@@ -288,6 +291,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B6105F042377285E00C041B5 /* WeatherApi.swift in Sources */,
+				B6CC47CE238AEF19000BF1DA /* ApiKeys.swift in Sources */,
 				B60CC062236CA912007894A0 /* WeatherViewController.swift in Sources */,
 				B60CC05A236CA7C1007894A0 /* ConvertViewController.swift in Sources */,
 				B60CC064236CA9AC007894A0 /* Translate.swift in Sources */,

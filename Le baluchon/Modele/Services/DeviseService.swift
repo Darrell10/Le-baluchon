@@ -9,11 +9,16 @@
 import Foundation
 
 class DeviseService {
+
+// MARK: - Property
     
     static var shared = DeviseService()
     private init() {}
     
-    private static let fixerUrl = URL(string: "http://data.fixer.io/api/latest?access_key=6cd8ee3ddb7399e53f7b1ab50d44a56c&symbols=USD")!
+    private static let url = "http://data.fixer.io/api/latest?access_key="
+    private static let clientID = valueForFixerAPIKey(named:"API_FIXER_CLIENT_ID")
+    private static let fixerParameter = "&symbols=USD"
+    private static let fixerUrl = URL(string: "\(url)" + "\(clientID)" + "\(fixerParameter)")!
     
     private var task: URLSessionDataTask?
     private var convertSession = URLSession(configuration: .default)
@@ -21,14 +26,15 @@ class DeviseService {
     init(convertSession: URLSession) {
         self.convertSession = convertSession
     }
-    
+}
+
+// MARK: - API function
+
+extension DeviseService {
+    /// Get Currency from Fixer API
     func getCurrency(completion: @escaping (Result<Devises, Error>) -> Void) {
         var request = URLRequest(url: DeviseService.fixerUrl)
         request.httpMethod = "GET"
-        
-        /*let body = "latest?access_key=6cd8ee3ddb7399e53f7b1ab50d44a56c&symbols=USD"
-        request.httpBody = body.data(using: .utf8)*/
-        
         task = convertSession.dataTask(with: request) { (data, response, error) in
             DispatchQueue.main.async {
                 guard let data = data, error == nil else {

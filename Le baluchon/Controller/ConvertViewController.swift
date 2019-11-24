@@ -13,7 +13,6 @@ class ConvertViewController: UIViewController {
 // MARK: - Property
     
     private var updateRate: Double = 1.00
-    private var updateDate: String = "01/01/1970"
     
     @IBOutlet weak var dataTextField: UITextField!
     @IBOutlet weak var convertResult: UILabel!
@@ -63,7 +62,6 @@ extension ConvertViewController {
         DeviseService.shared.getCurrency { (result) in
             switch result {
             case .success(let ratesData):
-                self.updateDate = ratesData.date
                 self.updateRate = ratesData.rates["USD"] ?? 0.00
                 self.updateDisplay(with: amount, and: self.updateRate)
             case .failure:
@@ -73,7 +71,7 @@ extension ConvertViewController {
     }
     
     private func updateDisplay(with amount: Double, and rates: Double) {
-        convertResult.text = ( " \(Devises.convert(amount, with: updateRate)) $")
+        convertResult.text = ( " \(Devises.convert(value: amount, with: updateRate)) $")
     }
 }
 
