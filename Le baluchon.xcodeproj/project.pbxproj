@@ -19,7 +19,6 @@
 		B60CC068236CA9E1007894A0 /* Devises.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60CC067236CA9E1007894A0 /* Devises.swift */; };
 		B6105F042377285E00C041B5 /* WeatherApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6105F032377285E00C041B5 /* WeatherApi.swift */; };
 		B680648323799979007F72B4 /* DeviseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B680648223799979007F72B4 /* DeviseService.swift */; };
-		B680648523799CD6007F72B4 /* ApiKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = B680648423799CD6007F72B4 /* ApiKeys.swift */; };
 		B6AC31872389962700D5C272 /* NetWorkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AC31862389962700D5C272 /* NetWorkError.swift */; };
 		B6AC318A2389988B00D5C272 /* DevisesTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AC31892389988B00D5C272 /* DevisesTestCase.swift */; };
 		B6AC6C792389326A00175298 /* DeviseServiceTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AC6C782389326A00175298 /* DeviseServiceTestCase.swift */; };
@@ -53,7 +52,6 @@
 		B60CC067236CA9E1007894A0 /* Devises.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Devises.swift; sourceTree = "<group>"; };
 		B6105F032377285E00C041B5 /* WeatherApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherApi.swift; sourceTree = "<group>"; };
 		B680648223799979007F72B4 /* DeviseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviseService.swift; sourceTree = "<group>"; };
-		B680648423799CD6007F72B4 /* ApiKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiKeys.swift; sourceTree = "<group>"; };
 		B6AC31862389962700D5C272 /* NetWorkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetWorkError.swift; sourceTree = "<group>"; };
 		B6AC31892389988B00D5C272 /* DevisesTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevisesTestCase.swift; sourceTree = "<group>"; };
 		B6AC6C6E238931F700175298 /* LebaluchonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LebaluchonTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -103,7 +101,6 @@
 		B60CC043236CA744007894A0 /* Le baluchon */ = {
 			isa = PBXGroup;
 			children = (
-				B680648423799CD6007F72B4 /* ApiKeys.swift */,
 				B60CC05E236CA853007894A0 /* Supporting Files */,
 				B60CC05D236CA844007894A0 /* Modele */,
 				B60CC05B236CA82E007894A0 /* View */,
@@ -287,7 +284,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B6105F042377285E00C041B5 /* WeatherApi.swift in Sources */,
-				B680648523799CD6007F72B4 /* ApiKeys.swift in Sources */,
 				B60CC062236CA912007894A0 /* WeatherViewController.swift in Sources */,
 				B60CC05A236CA7C1007894A0 /* ConvertViewController.swift in Sources */,
 				B60CC064236CA9AC007894A0 /* Translate.swift in Sources */,
