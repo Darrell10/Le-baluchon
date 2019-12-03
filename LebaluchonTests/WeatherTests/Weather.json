@@ -1,0 +1,79 @@
+{
+    "message": "accurate",
+    "cod": "200",
+    "count": 2,
+    "list": [
+        {
+            "id": 3021372,
+            "name": "Dijon",
+            "coord": {
+                "lat": 47.3216,
+                "lon": 5.0415
+            },
+            "main": {
+                "temp": 279.7,
+                "pressure": 1024,
+                "humidity": 60,
+                "temp_min": 279.15,
+                "temp_max": 280.15
+            },
+            "dt": 1575385756,
+            "wind": {
+                "speed": 4.1,
+                "deg": 20
+            },
+            "sys": {
+                "country": "FR"
+            },
+            "rain": null,
+            "snow": null,
+            "clouds": {
+                "all": 0
+            },
+            "weather": [
+                {
+                    "id": 800,
+                    "main": "Clear",
+                    "description": "ciel dégagé",
+                    "icon": "01d"
+                }
+            ]
+        },
+        {
+            "id": 2995024,
+            "name": "Dijon",
+            "coord": {
+                "lat": 45.298,
+                "lon": 2.5128
+            },
+            "main": {
+                "temp": 280.93,
+                "pressure": 1019,
+                "humidity": 70,
+                "temp_min": 280.15,
+                "temp_max": 281.48
+            },
+            "dt": 1575385896,
+            "wind": {
+                "speed": 3.6,
+                "deg": 110
+            },
+            "sys": {
+                "country": "FR"
+            },
+            "rain": null,
+            "snow": null,
+            "clouds": {
+                "all": 0
+            },
+            "weather": [
+                {
+                    "id": 800,
+                    "main": "Clear",
+                    "description": "ciel dégagé",
+                    "icon": "01d"
+                }
+            ]
+        }
+    ]
+}

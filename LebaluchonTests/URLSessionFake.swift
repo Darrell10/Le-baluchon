@@ -8,7 +8,7 @@
 
 import Foundation
 
-class ConvertURLSessionFake: URLSession {
+class URLSessionFake: URLSession {
     var data: Data?
     var response: URLResponse?
     var error: Error?
@@ -20,7 +20,7 @@ class ConvertURLSessionFake: URLSession {
     }
     
     override func dataTask(with url: URL, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void) -> URLSessionDataTask {
-        let task = ConvertURLSessionDataTaskFake()
+        let task = URLSessionDataTaskFake()
         task.completionHandler = completionHandler
         task.data = data
         task.urlResponse = response
@@ -29,7 +29,7 @@ class ConvertURLSessionFake: URLSession {
     }
     
     override func dataTask(with request: URLRequest, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void) -> URLSessionDataTask {
-        let task = ConvertURLSessionDataTaskFake()
+        let task = URLSessionDataTaskFake()
         task.completionHandler = completionHandler
         task.data = data
         task.urlResponse = response
@@ -38,7 +38,7 @@ class ConvertURLSessionFake: URLSession {
     }
 }
 
-class ConvertURLSessionDataTaskFake: URLSessionDataTask {
+class URLSessionDataTaskFake: URLSessionDataTask {
     var completionHandler: ((Data?, URLResponse?, Error?) -> Void)?
     var data: Data?
     var urlResponse: URLResponse?

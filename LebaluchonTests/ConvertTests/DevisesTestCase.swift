@@ -11,9 +11,9 @@ import XCTest
 
 class DevisesTestCase: XCTestCase {
     func testGivenValue3Rate1ConvertShouldReturn3() {
-        let value = 3.0
+        let number = 3.0
         let rate = 1.00
-        let result = Devises.convert(value, with: rate)
+        let result = Devises.convert(value: number, with: rate)
         XCTAssertEqual(result, "3.00")
     }
 }

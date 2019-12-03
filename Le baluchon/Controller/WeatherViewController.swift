@@ -7,43 +7,39 @@
 //
 
 import UIKit
+import CoreLocation
 
 class WeatherViewController: UIViewController {
     
+    private let weatherService = WeatherService()
+    var manager = CLLocationManager()
+    
     @IBOutlet weak var city1Label: UILabel!
-    @IBOutlet weak var desc1Label: UILabel!
+    @IBOutlet weak var icon1Image: UIImageView!
     @IBOutlet weak var temp1Label: UILabel!
+    @IBOutlet weak var desc1Label: UILabel!
+    @IBOutlet weak var city1View: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    @IBAction func updateWeatherButton(_ sender: Any) {
-        /*WeatherService.shared.getNewYorkWeather { (success, weather) in
-            //self.toggleActivityIndicator(shown: false)
-            if success, let weather = weather {
-                self.update(weather: weather)
-            } else {
-                self.presentAlert()
-            }
-        }*/
+        updateWeather()
+        city1View.layer.cornerRadius = 10
+        city1View.alpha = 0.9
         
     }
     
-    private func update(weather: WeatherApi) {
-        city1Label.text = weather.name
-        //desc1Label.text = weather.weather[2]
-        //imageView.image = UIImage(data: quote.imageData)
+    private func updateWeather() {
+        weatherService.getNYWeather { [unowned self] result in
+            switch result {
+                case .success(let cityData):
+                    guard let city1 = cityData.message else { return }
+                    DispatchQueue.main.async {
+                        self.desc1Label.text = city1
+                    }
+                case .failure:
+                    self.presentAlert(message: "Weather download Fail")
+            }
+        }
     }
-    
 }
 
-extension WeatherViewController {
-    private func presentAlert() {
-        let alertVC = UIAlertController(title: "Error", message: "Weather download failed", preferredStyle: .alert)
-        alertVC.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
-        present(alertVC, animated: true, completion: nil)
-    }
-}

@@ -1,22 +1,22 @@
 //
-//  ConvertTestCase.swift
+//  WeatherServiceTestCase.swift
 //  LebaluchonTests
 //
-//  Created by Frederick Port on 23/11/2019.
+//  Created by Frederick Port on 26/11/2019.
 //  Copyright © 2019 Frederick Port. All rights reserved.
 //
 
 import XCTest
 @testable import Le_baluchon
 
-class DeviseServiceTestCase: XCTestCase {
+class WeatherServiceTestCase: XCTestCase {
     func testGetDeviseShouldPostFailedCallbackError() {
-        let devisesService = DeviseService(
-            convertSession: URLSessionFake(data: nil, response: nil, error: FakeResponseData.errorConvert))
+        let weatherService = WeatherService(
+            weatherSession: URLSessionFake(data: nil, response: nil, error: FakeResponseData.errorWeather))
         
         let expectation = XCTestExpectation(description: "wait for queue change")
         
-        devisesService.getCurrency { (devise) in
+        weatherService.getNYWeather { (weather) in
             XCTAssertNotNil(NetWorkError.noData)
             expectation.fulfill()
         }
@@ -24,12 +24,12 @@ class DeviseServiceTestCase: XCTestCase {
     }
     
     func testGetDeviseShouldPostFailedCallbackIncorrectResponse() {
-        let devisesService = DeviseService(
-            convertSession: URLSessionFake(data: FakeResponseData.ConvertCorrectData, response: FakeResponseData.responseKO, error: nil))
+        let weatherService = WeatherService(
+            weatherSession: URLSessionFake(data: FakeResponseData.weatherCorrectData, response: FakeResponseData.responseKO, error: nil))
         
         let expectation = XCTestExpectation(description: "wait for queue change")
         
-        devisesService.getCurrency { (devise) in
+        weatherService.getNYWeather { (weather) in
             XCTAssertNotNil(NetWorkError.badUrl)
             expectation.fulfill()
         }
@@ -37,12 +37,12 @@ class DeviseServiceTestCase: XCTestCase {
     }
     
     func testGetDeviseShouldPostFailedCallbackIncorrectData() {
-        let devisesService = DeviseService(
-            convertSession: URLSessionFake(data: FakeResponseData.ConvertIncorrectData, response: FakeResponseData.responseOK, error: nil))
+        let weatherService = WeatherService(
+            weatherSession: URLSessionFake(data: FakeResponseData.weatherIncorrectData, response: FakeResponseData.responseOK, error: nil))
         
         let expectation = XCTestExpectation(description: "wait for queue change")
         
-        devisesService.getCurrency { (devise) in
+        weatherService.getNYWeather { (weather) in
             XCTAssertNotNil(NetWorkError.jsonError)
             expectation.fulfill()
         }
@@ -50,12 +50,12 @@ class DeviseServiceTestCase: XCTestCase {
     }
     
     func testGetQuoteShouldPostSuccessCallbackIfNoErrorAndCorrectData() {
-        let devisesService = DeviseService(
-            convertSession: URLSessionFake(data: FakeResponseData.ConvertCorrectData, response: FakeResponseData.responseOK, error: nil))
+        let weatherService = WeatherService(
+            weatherSession: URLSessionFake(data: FakeResponseData.weatherCorrectData, response: FakeResponseData.responseOK, error: nil))
         
         let expectation = XCTestExpectation(description: "wait for queue change")
         
-        devisesService.getCurrency { (devise) in
+        weatherService.getNYWeather { (devise) in
             
             //let date = "2019-11-23"
             //let rates = ["USD": 1.10213]
