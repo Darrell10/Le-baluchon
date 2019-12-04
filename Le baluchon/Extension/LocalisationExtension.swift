@@ -21,7 +21,10 @@ extension WeatherViewController: CLLocationManagerDelegate {
         guard let location = locations.last else { return }
         manager.stopUpdatingLocation()
         let coords = location.coordinate
-        print(coords)
+        WeatherService().getUserWeather(coords.latitude, coords.longitude) { [unowned self] result in
+            <#code#>
+        }
+        // ajout de la requete API pour les coordonnées de l'appareil
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {

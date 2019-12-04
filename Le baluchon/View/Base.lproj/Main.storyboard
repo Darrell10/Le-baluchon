@@ -243,10 +243,10 @@
                     <tabBarItem key="tabBarItem" title="Meteo" image="icons8-sun_filled" id="6qu-5r-NiE"/>
                     <connections>
                         <outlet property="city1Label" destination="2xj-kH-drQ" id="cvt-nP-2uJ"/>
-                        <outlet property="city1View" destination="MZ9-Jg-2EI" id="kXP-JT-xIa"/>
-                        <outlet property="desc1Label" destination="J7G-rY-51Q" id="HDM-KA-AXu"/>
-                        <outlet property="icon1Image" destination="l6x-rP-E7u" id="6ob-86-Qjg"/>
-                        <outlet property="temp1Label" destination="rfy-eG-bpI" id="SB3-Xd-uN5"/>
+                        <outlet property="city1View" destination="MZ9-Jg-2EI" id="WvA-mq-2Oi"/>
+                        <outlet property="desc1Label" destination="J7G-rY-51Q" id="Ltg-lo-QOl"/>
+                        <outlet property="icon1Image" destination="l6x-rP-E7u" id="9KM-Fi-4BI"/>
+                        <outlet property="tempLabel" destination="rfy-eG-bpI" id="7Mf-9N-ibF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WbS-3z-bX5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

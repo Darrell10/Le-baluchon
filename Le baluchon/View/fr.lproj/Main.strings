@@ -1,0 +1,39 @@
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "2xj-kH-drQ"; */
+"2xj-kH-drQ.text" = "Label";
+
+/* Class = "UITabBarItem"; title = "Meteo"; ObjectID = "6qu-5r-NiE"; */
+"6qu-5r-NiE.title" = "Meteo";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "7bm-2P-tUO"; */
+"7bm-2P-tUO.text" = "Label";
+
+/* Class = "UITabBarItem"; title = "Devises"; ObjectID = "EHX-sK-1MZ"; */
+"EHX-sK-1MZ.title" = "Devises";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "I9p-on-weG"; */
+"I9p-on-weG.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "J7G-rY-51Q"; */
+"J7G-rY-51Q.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "O3c-fo-xQi"; */
+"O3c-fo-xQi.text" = "Label";
+
+/* Class = "UILabel"; text = "Convertisseur de devises"; ObjectID = "ViF-Z4-lwi"; */
+"ViF-Z4-lwi.text" = "Convertisseur de devises";
+
+/* Class = "UILabel"; text = "Traducteur de langues"; ObjectID = "Zg7-uV-LmB"; */
+"Zg7-uV-LmB.text" = "Traducteur de langues";
+
+/* Class = "UILabel"; text = "Comparateur de météo"; ObjectID = "eC3-hV-DQm"; */
+"eC3-hV-DQm.text" = "Comparateur de météo";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "rfy-eG-bpI"; */
+"rfy-eG-bpI.text" = "Label";
+
+/* Class = "UILabel"; text = "Convertir des euros en Dollars"; ObjectID = "tHN-YC-ZMe"; */
+"tHN-YC-ZMe.text" = "Convertir des euros en Dollars";
+
+/* Class = "UITabBarItem"; title = "Traducteur"; ObjectID = "ttM-Wt-2eS"; */
+"ttM-Wt-2eS.title" = "Traducteur";

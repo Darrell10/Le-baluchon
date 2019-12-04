@@ -64,6 +64,8 @@
 		B6412A4E2396B6C900074D89 /* Weather.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Weather.json; sourceTree = "<group>"; };
 		B6412A512396BD7A00074D89 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		B680648223799979007F72B4 /* DeviseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviseService.swift; sourceTree = "<group>"; };
+		B6A5E2FD2397F3BB00AE7440 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		B6A5E2FE2397F3BC00AE7440 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
 		B6AC31862389962700D5C272 /* NetWorkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetWorkError.swift; sourceTree = "<group>"; };
 		B6AC31892389988B00D5C272 /* DevisesTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevisesTestCase.swift; sourceTree = "<group>"; };
 		B6AC6C6E238931F700175298 /* LebaluchonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LebaluchonTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -285,6 +287,7 @@
 			knownRegions = (
 				en,
 				Base,
+				fr,
 			);
 			mainGroup = B60CC038236CA744007894A0;
 			productRefGroup = B60CC042236CA744007894A0 /* Products */;
@@ -370,6 +373,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				B60CC04B236CA744007894A0 /* Base */,
+				B6A5E2FE2397F3BC00AE7440 /* fr */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -378,6 +382,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				B60CC050236CA745007894A0 /* Base */,
+				B6A5E2FD2397F3BB00AE7440 /* fr */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -389,6 +394,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -449,6 +455,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

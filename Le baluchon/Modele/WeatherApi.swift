@@ -8,15 +8,14 @@
 
 import Foundation
 
-struct WeatherApi: Decodable {
-    let message : String?
-    let cod: String
+struct WeatherApi: Codable {
+    let message, cod: String
     let count: Int
     let list: [List]
 }
 
 // MARK: - List
-struct List: Decodable {
+struct List: Codable {
     let id: Int
     let name: String
     let coord: Coord
@@ -24,23 +23,22 @@ struct List: Decodable {
     let dt: Int
     let wind: Wind
     let sys: Sys
-    let rain: Rain?
     let clouds: Clouds
     let weather: [Weather]
 }
 
 // MARK: - Clouds
-struct Clouds: Decodable {
+struct Clouds: Codable {
     let all: Int
 }
 
 // MARK: - Coord
-struct Coord: Decodable {
+struct Coord: Codable {
     let lat, lon: Double
 }
 
 // MARK: - Main
-struct Main: Decodable {
+struct Main: Codable {
     let temp: Double
     let pressure, humidity: Int
     let tempMin, tempMax: Double
@@ -55,24 +53,17 @@ struct Main: Decodable {
     }
 }
 
-// MARK: - Rain
-struct Rain: Decodable {
-    let the3H: Double
-
-    enum CodingKeys: String, CodingKey {
-        case the3H = "3h"
-    }
-}
-
 // MARK: - Sys
-struct Sys: Decodable {
+struct Sys: Codable {
     let country: String
 }
 
 // MARK: - Weather
-struct Weather: Decodable {
+struct Weather: Codable {
     let id: Int
-    let main, weatherDescription, icon: String
+    let main : String
+    let weatherDescription : String?
+    let icon: String
 
     enum CodingKeys: String, CodingKey {
         case id, main
@@ -82,9 +73,7 @@ struct Weather: Decodable {
 }
 
 // MARK: - Wind
-struct Wind: Decodable {
+struct Wind: Codable {
     let speed: Double
-    let deg: Int?
+    let deg: Int
 }
-
-
