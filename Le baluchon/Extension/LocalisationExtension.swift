@@ -22,9 +22,20 @@ extension WeatherViewController: CLLocationManagerDelegate {
         manager.stopUpdatingLocation()
         let coords = location.coordinate
         WeatherService().getUserWeather(coords.latitude, coords.longitude) { [unowned self] result in
-            <#code#>
+            switch result {
+            case .success(let userData):
+                DispatchQueue.main.async {
+                    guard let user = userData.list.first else { return }
+                    self.currentTempLabel.text = "\(user.main.temp)°C"
+                    self.currentCityLabel.text = user.name
+                    self.currentIconImage.loadIcon(user.weather[0].icon)
+                    self.currentDescLabel.text = user.weather[0].weatherDescription
+                }
+            case .failure:
+                self.presentAlert(message: "Weather download fail")
+                self.userCityView.isHidden = true
+            }
         }
-        // ajout de la requete API pour les coordonnées de l'appareil
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {

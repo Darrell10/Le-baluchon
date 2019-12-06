@@ -14,28 +14,28 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="5V3-gd-Iia">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
                         <segue destination="9jk-20-c0t" kind="relationship" relationship="viewControllers" id="Qfn-7f-r7w"/>
-                        <segue destination="wT3-Wm-N42" kind="relationship" relationship="viewControllers" id="CCC-kv-kut"/>
                         <segue destination="Qn5-iI-Grp" kind="relationship" relationship="viewControllers" id="jPu-ZY-mjp"/>
+                        <segue destination="I6h-mD-WWE" kind="relationship" relationship="viewControllers" id="aaI-d6-lRv"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oz4-oS-8Du" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-590" y="-210"/>
         </scene>
-        <!--Traducteur-->
+        <!--Editor View Controller-->
         <scene sceneID="IGA-WO-Nlh">
             <objects>
-                <viewController id="wT3-Wm-N42" customClass="TranslateViewController" customModule="Le_baluchon" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="wT3-Wm-N42" customClass="EditorViewController" customModule="Le_baluchon" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hUI-JW-ID4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Traducteur de langues" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="Zg7-uV-LmB">
-                                <rect key="frame" x="20" y="64" width="335" height="40"/>
+                                <rect key="frame" x="20" y="108" width="335" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="kHY-2e-rgL"/>
                                 </constraints>
@@ -43,62 +43,118 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="pZH-hp-VJO">
-                                <rect key="frame" x="20" y="124" width="335" height="385"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PC0-vU-zxZ">
-                                        <rect key="frame" x="0.0" y="0.0" width="335" height="150"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="150" id="nPA-fv-srf"/>
-                                        </constraints>
-                                    </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JNr-6x-MFE">
-                                        <rect key="frame" x="0.0" y="170" width="335" height="45"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ghL-RI-PEz">
-                                                <rect key="frame" x="145" y="0.0" width="45" height="45"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="45" id="XZv-kz-sLb"/>
-                                                    <constraint firstAttribute="width" constant="45" id="ZiW-rn-zGv"/>
-                                                </constraints>
-                                                <state key="normal" image="icons8-requires_interpreter_filled"/>
-                                            </button>
-                                        </subviews>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstItem="ghL-RI-PEz" firstAttribute="centerY" secondItem="JNr-6x-MFE" secondAttribute="centerY" id="6M6-xV-Amn"/>
-                                            <constraint firstAttribute="height" constant="45" id="Fov-ok-YUR"/>
-                                            <constraint firstItem="ghL-RI-PEz" firstAttribute="centerX" secondItem="JNr-6x-MFE" secondAttribute="centerX" id="bQb-Us-sH0"/>
-                                        </constraints>
-                                    </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4d7-8I-Vcz">
-                                        <rect key="frame" x="0.0" y="235" width="335" height="150"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="150" id="ML3-de-tYZ"/>
-                                        </constraints>
-                                    </view>
-                                </subviews>
-                            </stackView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oT7-KL-mU8">
+                                <rect key="frame" x="20" y="168" width="335" height="541"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="9JF-va-b8N" firstAttribute="bottom" secondItem="oT7-KL-mU8" secondAttribute="bottom" constant="20" id="1cV-Jd-7zY"/>
                             <constraint firstItem="Zg7-uV-LmB" firstAttribute="top" secondItem="9JF-va-b8N" secondAttribute="top" constant="20" id="Bod-kW-sve"/>
                             <constraint firstItem="9JF-va-b8N" firstAttribute="trailing" secondItem="Zg7-uV-LmB" secondAttribute="trailing" constant="20" id="GAS-dR-pfc"/>
-                            <constraint firstItem="pZH-hp-VJO" firstAttribute="top" secondItem="Zg7-uV-LmB" secondAttribute="bottom" constant="20" id="JII-Cz-fb9"/>
-                            <constraint firstItem="9JF-va-b8N" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="pZH-hp-VJO" secondAttribute="bottom" constant="20" id="Q0N-68-9y9"/>
-                            <constraint firstItem="pZH-hp-VJO" firstAttribute="leading" secondItem="9JF-va-b8N" secondAttribute="leading" constant="20" id="dZp-kh-HnQ"/>
+                            <constraint firstItem="9JF-va-b8N" firstAttribute="trailing" secondItem="oT7-KL-mU8" secondAttribute="trailing" constant="20" id="Gwv-Do-SWl"/>
+                            <constraint firstItem="oT7-KL-mU8" firstAttribute="top" secondItem="Zg7-uV-LmB" secondAttribute="bottom" constant="20" id="LlH-Ki-jHl"/>
+                            <constraint firstItem="oT7-KL-mU8" firstAttribute="leading" secondItem="9JF-va-b8N" secondAttribute="leading" constant="20" id="k9O-2W-otH"/>
                             <constraint firstItem="Zg7-uV-LmB" firstAttribute="leading" secondItem="9JF-va-b8N" secondAttribute="leading" constant="20" id="osb-YO-Af6"/>
-                            <constraint firstItem="9JF-va-b8N" firstAttribute="trailing" secondItem="pZH-hp-VJO" secondAttribute="trailing" constant="20" id="vNH-2H-n3J"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="9JF-va-b8N"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Traducteur" image="icons8-translation" id="ttM-Wt-2eS"/>
+                    <navigationItem key="navigationItem" id="geB-2m-SxE">
+                        <barButtonItem key="leftBarButtonItem" title="Detecteur de Langue" id="3w6-Gt-kW2"/>
+                        <barButtonItem key="rightBarButtonItem" title="Traduction" id="Es8-Mk-SNz">
+                            <connections>
+                                <segue destination="gUp-dA-aDq" kind="show" identifier="LanguageViewControllerSegue" id="EyE-oJ-qVQ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PG7-RM-QzJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="484" y="-210"/>
+            <point key="canvasLocation" x="1106" y="-217"/>
+        </scene>
+        <!--Languages View Controller-->
+        <scene sceneID="BhM-W6-1fm">
+            <objects>
+                <viewController id="gUp-dA-aDq" customClass="LanguagesViewController" customModule="Le_baluchon" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="aDV-2c-MZm">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vqC-Sy-7yX">
+                                <rect key="frame" x="0.0" y="88" width="375" height="641"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="vqC-Sy-7yX" firstAttribute="leading" secondItem="r5U-M6-qof" secondAttribute="leading" id="EHy-zD-UqM"/>
+                            <constraint firstItem="vqC-Sy-7yX" firstAttribute="trailing" secondItem="r5U-M6-qof" secondAttribute="trailing" id="MSV-Mu-sXo"/>
+                            <constraint firstItem="vqC-Sy-7yX" firstAttribute="bottom" secondItem="r5U-M6-qof" secondAttribute="bottom" id="bDF-iC-nXo"/>
+                            <constraint firstItem="vqC-Sy-7yX" firstAttribute="top" secondItem="r5U-M6-qof" secondAttribute="top" id="eM4-GT-Qi5"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="r5U-M6-qof"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="GfJ-uu-a33"/>
+                    <connections>
+                        <segue destination="fYv-4y-BeC" kind="show" identifier="TranslationViewControllerSegue" id="4GP-M4-yZS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zF1-va-KBv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1973.5999999999999" y="-211.33004926108376"/>
+        </scene>
+        <!--Translate View Controller-->
+        <scene sceneID="fbM-AG-hIw">
+            <objects>
+                <viewController id="fYv-4y-BeC" customClass="TranslateViewController" customModule="Le_baluchon" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="W7x-hi-9eD">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="z4s-Xw-GSi">
+                                <rect key="frame" x="20" y="108" width="335" height="601"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="cTZ-qp-OOy" firstAttribute="bottom" secondItem="z4s-Xw-GSi" secondAttribute="bottom" constant="20" id="0AH-zL-LkW"/>
+                            <constraint firstItem="cTZ-qp-OOy" firstAttribute="trailing" secondItem="z4s-Xw-GSi" secondAttribute="trailing" constant="20" id="9Yg-un-pyl"/>
+                            <constraint firstItem="z4s-Xw-GSi" firstAttribute="top" secondItem="cTZ-qp-OOy" secondAttribute="top" constant="20" id="t1a-4J-Wjs"/>
+                            <constraint firstItem="z4s-Xw-GSi" firstAttribute="leading" secondItem="cTZ-qp-OOy" secondAttribute="leading" constant="20" id="zDN-e1-xfM"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="cTZ-qp-OOy"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="cyc-Gw-ZFf"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="n9D-oL-usP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2877.5999999999999" y="-210.59113300492612"/>
+        </scene>
+        <!--Traducteur-->
+        <scene sceneID="cZK-iM-h89">
+            <objects>
+                <navigationController id="I6h-mD-WWE" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Traducteur" image="icons8-translation" id="5W1-Xn-3Kp"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="AXL-kw-dJi">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="wT3-Wm-N42" kind="relationship" relationship="rootViewController" id="MNc-HM-ho8"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rLS-h8-iQ7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="334" y="-217"/>
         </scene>
         <!--Meteo-->
         <scene sceneID="Fa8-bY-6hc">
@@ -244,14 +300,19 @@
                     <connections>
                         <outlet property="city1Label" destination="2xj-kH-drQ" id="cvt-nP-2uJ"/>
                         <outlet property="city1View" destination="MZ9-Jg-2EI" id="WvA-mq-2Oi"/>
+                        <outlet property="currentCityLabel" destination="7bm-2P-tUO" id="PRw-ru-wCP"/>
+                        <outlet property="currentDescLabel" destination="O3c-fo-xQi" id="cX6-1C-Vb8"/>
+                        <outlet property="currentIconImage" destination="vTL-C6-fFd" id="dYL-B3-szl"/>
+                        <outlet property="currentTempLabel" destination="I9p-on-weG" id="FDn-hD-2qg"/>
                         <outlet property="desc1Label" destination="J7G-rY-51Q" id="Ltg-lo-QOl"/>
                         <outlet property="icon1Image" destination="l6x-rP-E7u" id="9KM-Fi-4BI"/>
                         <outlet property="tempLabel" destination="rfy-eG-bpI" id="7Mf-9N-ibF"/>
+                        <outlet property="userCityView" destination="kDB-Wl-7cg" id="IYw-rN-U0g"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WbS-3z-bX5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="482.39999999999998" y="580.78817733990149"/>
+            <point key="canvasLocation" x="334" y="511"/>
         </scene>
         <!--Devises-->
         <scene sceneID="YLi-eK-dai">
@@ -368,13 +429,12 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="484" y="-911"/>
+            <point key="canvasLocation" x="334" y="-916"/>
         </scene>
     </scenes>
     <resources>
         <image name="icons8-currency_exchange_filled" width="50" height="50"/>
         <image name="icons8-dollar_sign_7" width="25" height="25"/>
-        <image name="icons8-requires_interpreter_filled" width="50" height="50"/>
         <image name="icons8-sun_filled" width="25" height="25"/>
         <image name="icons8-translation" width="25" height="25"/>
     </resources>
