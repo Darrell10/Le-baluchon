@@ -33,7 +33,7 @@ final class ConvertViewController: UIViewController {
                     self.convertResultLabel.text = ( " \(Devises.convert(value: number, with: rate)) $")
                 }
             case .failure:
-                self.presentAlert(message: "Convert devises download Fail")
+                self.presentAlert(title: "Erreur", message: "La conversion de devise à échouée")
             }
         }
     }

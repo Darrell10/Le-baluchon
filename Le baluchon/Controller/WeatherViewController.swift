@@ -51,7 +51,7 @@ class WeatherViewController: UIViewController {
                     self.desc1Label.text = first.weather[0].weatherDescription
                 }
             case .failure:
-                self.presentAlert(message: "Weather download fail")
+                self.presentAlert(title: "Erreur", message: "Les données météo ont échouées")
                 self.city1View.isHidden = true
             }
         }

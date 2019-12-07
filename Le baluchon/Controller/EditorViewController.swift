@@ -9,22 +9,41 @@
 import UIKit
 
 class EditorViewController: UIViewController {
-
+    
+    @IBOutlet weak var editorTextView: UITextView!
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func detectLanguage(_ sender: Any) {
+        if editorTextView.text == "" {
+            //present an alert if text view is empty
+            self.presentAlert(title: "Detection de la langue", message: "le texte est vide !")
+        } else {
+            TranslateService.shared.detectLanguage(forText: self.editorTextView.text!) { (language) in
+                if let language = language {
+                    DispatchQueue.main.async {
+                        // Present an alert with the detected language.
+                        self.presentAlert(title: "Detection de la langue", message: "Le langage suivant a été détecté:\n\n\(language)")
+                    }
+                } else {
+                    // Present an alert saying that an error occurred.
+                    self.presentAlert(title: "Detection de la langue", message: "Oops! le language n'a pas été détecté.")
+                }
+            }
+            
+        }
+        
     }
-    */
+}
 
+extension EditorViewController : UITextFieldDelegate{
+    @IBAction func dismissKeyboard(_ sender: UITapGestureRecognizer) {
+        editorTextView.resignFirstResponder()
+    }
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
 }

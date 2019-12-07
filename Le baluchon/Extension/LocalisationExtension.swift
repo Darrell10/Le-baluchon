@@ -32,7 +32,7 @@ extension WeatherViewController: CLLocationManagerDelegate {
                     self.currentDescLabel.text = user.weather[0].weatherDescription
                 }
             case .failure:
-                self.presentAlert(message: "Weather download fail")
+                self.presentAlert(title: "Erreur", message: "Les données météo ont échouées")
                 self.userCityView.isHidden = true
             }
         }

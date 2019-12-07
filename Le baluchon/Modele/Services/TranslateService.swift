@@ -30,29 +30,72 @@ final class TranslateService: NSObject {
 
 // MARK: - API function
 
-/*extension TranslateService {
-    /// Get Currency from Fixer API
-    func getTranslate(completion: @escaping (Result<TranslationAPI, Error>) -> Void) {
-        guard let urlData = url else { return }
-        task = translateSession.dataTask(with: urlData) { (data, response, error) in
-            guard let data = data, error == nil else {
-                completion(.failure(NetWorkError.noData))
-                return
+extension TranslateService {
+    
+    private func makeRequest(usingTranslationAPI api: TranslationAPI, urlParams: [String: String], completion: @escaping (_ results: [String: Any]?) -> Void) {
+        if var components = URLComponents(string: api.getURL()) {
+            components.queryItems = [URLQueryItem]()
+            for (key, value) in urlParams {
+                components.queryItems?.append(URLQueryItem(name: key, value: value))
             }
-            guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
-                completion(.failure(NetWorkError.badUrl))
-                return
+            if let url = components.url {
+                var request = URLRequest(url: url)
+                request.httpMethod = api.getHTTPMethod()
+                task = translateSession.dataTask(with: request) { (results, response, error) in
+                    if let error = error {
+                        print(error)
+                        completion(nil)
+                        //completion(.failure(NetWorkError.noData))
+                    } else {
+                        if let response = response as? HTTPURLResponse, let results = results {
+                            if response.statusCode == 200 || response.statusCode == 201 {
+                                do {
+                                    if let resultsDict = try JSONSerialization.jsonObject(with: results, options: JSONSerialization.ReadingOptions.mutableLeaves) as? [String: Any] {
+                                        completion(resultsDict)
+                                    }
+                                } catch {
+                                    //completion(.failure(NetWorkError.jsonError))
+                                    print(error.localizedDescription)
+                                }
+                            }
+                        } else {
+                            completion(nil)
+                        }
+                    }
+                }
+                task?.resume()
             }
-            do {
-                //let devise = try JSONDecoder().decode(TranslationAPI.self, from: data)
-                //completion(.success(devise))
-            } catch {
-                completion(.failure(NetWorkError.jsonError))
-            }
+            
         }
-        task?.resume()
     }
-}*/
+    
+    func detectLanguage(forText text: String, completion: @escaping (_ language: String?) -> Void) {
+        let urlParams = ["key": apiKey, "q": text] 
+        makeRequest(usingTranslationAPI: .detectLanguage, urlParams: urlParams) { (results) in
+            guard let results = results else { completion(nil); return }
+            if let data = results["data"] as? [String: Any], let detections = data["detections"] as? [[[String: Any]]] {
+                var detectedLanguages = [String]()
+                for detection in detections {
+                    for currentDetection in detection {
+                        if let language = currentDetection["language"] as? String {
+                            detectedLanguages.append(language)
+                        }
+                    }
+                }
+                if detectedLanguages.count > 0 {
+                    self.sourceLanguageCode = detectedLanguages[0]
+                    completion(detectedLanguages[0])
+                } else {
+                    completion(nil)
+                }
+                
+            } else {
+                completion(nil)
+            }
+            
+        }
+    }
+}
 
 struct TranslationLanguage {
     var code: String?
