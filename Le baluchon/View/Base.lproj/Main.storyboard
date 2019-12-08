@@ -78,12 +78,13 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Traduction" id="Es8-Mk-SNz">
                             <connections>
-                                <segue destination="gUp-dA-aDq" kind="show" identifier="LanguageViewControllerSegue" id="EyE-oJ-qVQ"/>
+                                <action selector="translate:" destination="wT3-Wm-N42" id="LRT-PH-Mbe"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="editorTextView" destination="tU3-VY-zKx" id="1Oc-FL-0dz"/>
+                        <segue destination="gUp-dA-aDq" kind="show" identifier="LanguagesViewControllerSegue" id="OG2-jP-epu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PG7-RM-QzJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -106,6 +107,36 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vqC-Sy-7yX">
                                 <rect key="frame" x="0.0" y="88" width="375" height="641"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="LanguageCell" textLabel="RfM-op-eCJ" detailTextLabel="bqp-gS-3Dv" style="IBUITableViewCellStyleSubtitle" id="APT-Pb-dzJ">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="55.666667938232422"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="APT-Pb-dzJ" id="JrL-If-xg4">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="55.666667938232422"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="RfM-op-eCJ">
+                                                    <rect key="frame" x="15" y="8.9999999999999982" width="33.333333333333336" height="20.333333333333332"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="bqp-gS-3Dv">
+                                                    <rect key="frame" x="14.999999999999996" y="31.333333333333332" width="43.666666666666664" height="14.333333333333334"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="gUp-dA-aDq" id="nhb-2w-YpC"/>
+                                    <outlet property="delegate" destination="gUp-dA-aDq" id="vLe-3K-gwV"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -119,12 +150,13 @@
                     </view>
                     <navigationItem key="navigationItem" id="GfJ-uu-a33"/>
                     <connections>
+                        <outlet property="tableView" destination="vqC-Sy-7yX" id="6i1-vn-V48"/>
                         <segue destination="fYv-4y-BeC" kind="show" identifier="TranslationViewControllerSegue" id="4GP-M4-yZS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zF1-va-KBv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1855" y="-217"/>
+            <point key="canvasLocation" x="1842" y="-217"/>
         </scene>
         <!--Translate View Controller-->
         <scene sceneID="fbM-AG-hIw">
@@ -153,6 +185,9 @@
                         <viewLayoutGuide key="safeArea" id="cTZ-qp-OOy"/>
                     </view>
                     <navigationItem key="navigationItem" id="cyc-Gw-ZFf"/>
+                    <connections>
+                        <outlet property="textView" destination="z4s-Xw-GSi" id="1fu-0S-39J"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n9D-oL-usP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

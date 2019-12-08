@@ -95,6 +95,65 @@ extension TranslateService {
             
         }
     }
+    func fetchSupportedLanguages(completion: @escaping (_ success: Bool) -> Void) {
+     var urlParams = [String: String]()
+     urlParams["key"] = apiKey
+     urlParams["target"] = Locale.current.languageCode ?? "en"
+        makeRequest(usingTranslationAPI: .supportedLanguages, urlParams: urlParams) { (results) in
+            guard let results = results else { completion(false); return }
+            if let data = results["data"] as? [String: Any], let languages = data["languages"] as? [[String: Any]] {
+            
+                   for lang in languages {
+                       var languageCode: String?
+                       var languageName: String?
+            
+                       if let code = lang["language"] as? String {
+                           languageCode = code
+                       }
+                       if let name = lang["name"] as? String {
+                           languageName = name
+                       }
+                       self.supportedLanguages.append(TranslationLanguage(code: languageCode, name: languageName))
+                   }
+                   completion(true)
+            
+               } else {
+                   completion(false)
+               }
+        }
+    }
+    
+    func translate(completion: @escaping (_ translations: String?) -> Void) {
+        guard let textToTranslate = textToTranslate, let targetLanguage = targetLanguageCode else { completion(nil); return }
+        var urlParams = [String: String]()
+        urlParams["key"] = apiKey
+        urlParams["q"] = textToTranslate
+        urlParams["target"] = targetLanguage
+        urlParams["format"] = "text"
+        if let sourceLanguage = sourceLanguageCode {
+            urlParams["source"] = sourceLanguage
+        }
+        makeRequest(usingTranslationAPI: .translate, urlParams: urlParams) { (results) in
+            guard let results = results else { completion(nil); return }
+            if let data = results["data"] as? [String: Any], let translations = data["translations"] as? [[String: Any]] {
+                var allTranslations = [String]()
+                for translation in translations {
+                    if let translatedText = translation["translatedText"] as? String {
+                        allTranslations.append(translatedText)
+                    }
+                }
+                if allTranslations.count > 0 {
+                    completion(allTranslations[0])
+                } else {
+                    completion(nil)
+                }
+            } else {
+                completion(nil)
+            }
+        }
+        
+    }
+    
 }
 
 struct TranslationLanguage {

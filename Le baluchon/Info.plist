@@ -20,6 +20,19 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Utiliser la position de l'utilisateur</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Utiliser la position de l'utilisateur</string>
+	<key>NSLocationUsageDescription</key>
+	<string>Utiliser la position de l'utilisateur</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Utiliser la position de l'utilisateur</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
@@ -50,8 +63,6 @@
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
-		<string>UIInterfaceOrientationLandscapeLeft</string>
-		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
@@ -60,18 +71,5 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key>NSAppTransportSecurity</key>
-	<dict>
-		<key>NSAllowsArbitraryLoads</key>
-		<true/>
-	</dict>
-	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>Utiliser la position de l&apos;utilisateur</string>
-	<key>NSLocationUsageDescription</key>
-	<string>Utiliser la position de l&apos;utilisateur</string>
-	<key>NSLocationAlwaysUsageDescription</key>
-	<string>Utiliser la position de l&apos;utilisateur</string>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Utiliser la position de l&apos;utilisateur</string>
 </dict>
 </plist>

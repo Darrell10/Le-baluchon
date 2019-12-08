@@ -36,6 +36,15 @@ class EditorViewController: UIViewController {
         }
         
     }
+    
+    
+    @IBAction func translate(_ sender: Any) {
+        if editorTextView.text != "" {
+            TranslateService.shared.textToTranslate = editorTextView.text
+            performSegue(withIdentifier: "LanguagesViewControllerSegue", sender: self)
+        }
+    }
+    
 }
 
 extension EditorViewController : UITextFieldDelegate{

@@ -140,11 +140,9 @@
 		B60CC058236CA7A8007894A0 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				B6E5FD7D239D8EB400181AFA /* Translate */,
 				B60CC059236CA7C1007894A0 /* ConvertViewController.swift */,
 				B60CC061236CA912007894A0 /* WeatherViewController.swift */,
-				B6112600239A6C7E00AAC3B2 /* EditorViewController.swift */,
-				B61125FE239A6C2600AAC3B2 /* LanguagesViewController.swift */,
-				B60CC05F236CA8A9007894A0 /* TranslateViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -220,6 +218,16 @@
 				B6AC6C72238931F700175298 /* Info.plist */,
 			);
 			path = LebaluchonTests;
+			sourceTree = "<group>";
+		};
+		B6E5FD7D239D8EB400181AFA /* Translate */ = {
+			isa = PBXGroup;
+			children = (
+				B6112600239A6C7E00AAC3B2 /* EditorViewController.swift */,
+				B61125FE239A6C2600AAC3B2 /* LanguagesViewController.swift */,
+				B60CC05F236CA8A9007894A0 /* TranslateViewController.swift */,
+			);
+			path = Translate;
 			sourceTree = "<group>";
 		};
 		B6FD74B8238DA336005D7F87 /* WeatherTests */ = {
