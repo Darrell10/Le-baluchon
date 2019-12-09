@@ -33,8 +33,8 @@ final class WeatherService {
 extension WeatherService {
     /// Get weather from openweathermap API
     func getNYWeather(completion: @escaping (Result<WeatherApi, Error>) -> Void) {
-        guard let urlTest = url else { return }
-        task = weatherSession.dataTask(with: urlTest) { (data, response, error) in
+        guard let weatherUrl = url else { return }
+        task = weatherSession.dataTask(with: weatherUrl) { (data, response, error) in
                 guard let data = data, error == nil else {
                     completion(.failure(NetWorkError.noData))
                     return
@@ -57,7 +57,6 @@ extension WeatherService {
         let urlUserRequest = URL(string: "\(openWeatherUrl)find?lat=\(lat)&lon=\(lon)&APPID=\(openWeatherClientID)&lang=\(lang)&units=\(unit)")
         guard let urlUser = urlUserRequest else { return }
         task = weatherSession.dataTask(with: urlUser) { (data, response, error) in
-            
                 guard let data = data, error == nil else {
                     completion(.failure(NetWorkError.noData))
                     return

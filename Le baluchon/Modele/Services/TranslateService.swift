@@ -156,8 +156,3 @@ extension TranslateService {
     
 }
 
-struct TranslationLanguage {
-    var code: String?
-    var name: String?
-}
-

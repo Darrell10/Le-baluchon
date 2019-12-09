@@ -11,8 +11,11 @@ import UIKit
 class EditorViewController: UIViewController {
     
     @IBOutlet weak var editorTextView: UITextView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        editorTextView.layer.cornerRadius = 10
+        editorTextView.alpha = 0.9
         
     }
     

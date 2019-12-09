@@ -8,6 +8,11 @@
 
 import Foundation
 
+struct TranslationLanguage: Decodable {
+    var code: String?
+    var name: String?
+}
+
 enum TranslationAPI {
     case detectLanguage
     case translate

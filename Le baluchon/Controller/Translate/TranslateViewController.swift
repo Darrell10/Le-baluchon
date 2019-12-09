@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class TranslateViewController: UIViewController {
     
@@ -14,6 +15,8 @@ class TranslateViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        textView.layer.cornerRadius = 10
+        textView.alpha = 0.9
         
     }
     
@@ -26,18 +29,31 @@ class TranslateViewController: UIViewController {
         initiateTranslation()
     }
     
-    func initiateTranslation() {
+    private func initiateTranslation() {
         
         TranslateService.shared.translate(completion: { (translation) in
             if let translation = translation {
                 DispatchQueue.main.async { [unowned self] in
                     self.textView.text = translation
+                    self.speak()
                 }
             } else {
                 self.presentAlert(title: "Erreur", message: "La traduction à échouée")
                 
             }
         })
+        
+    }
+    
+    private func speak() {
+        if let texte = textView.text {
+            let languageSpeak = TranslateService.shared.targetLanguageCode
+            let speech = AVSpeechSynthesizer()
+            let utterance = AVSpeechUtterance(string: texte)
+            utterance.rate = 0.5
+            utterance.voice = AVSpeechSynthesisVoice(language: languageSpeak)
+            speech.speak(utterance)
+        }
         
     }
 }

@@ -11,13 +11,7 @@ import UIKit
 class LanguagesViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
-    
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
-    }
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         TranslateService.shared.fetchSupportedLanguages(completion: { (success) in
@@ -29,7 +23,6 @@ class LanguagesViewController: UIViewController {
 }
 
 extension LanguagesViewController: UITableViewDataSource {
-    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -45,8 +38,6 @@ extension LanguagesViewController: UITableViewDataSource {
         cell.detailTextLabel?.text = language.code
         return cell
     }
-    
-    
 }
 
 extension LanguagesViewController: UITableViewDelegate {
