@@ -22,10 +22,10 @@
 		B6112601239A6C7E00AAC3B2 /* EditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6112600239A6C7E00AAC3B2 /* EditorViewController.swift */; };
 		B623F4392399201800867A9B /* TranslateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B623F4382399201800867A9B /* TranslateService.swift */; };
 		B6412A4B239699E500074D89 /* ExtensionUIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6412A4A239699E500074D89 /* ExtensionUIImageView.swift */; };
-		B6412A4D2396AB7E00074D89 /* LocalisationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6412A4C2396AB7E00074D89 /* LocalisationExtension.swift */; };
 		B6412A4F2396B6C900074D89 /* Weather.json in Resources */ = {isa = PBXBuildFile; fileRef = B6412A4E2396B6C900074D89 /* Weather.json */; };
 		B6412A522396BD7A00074D89 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6412A512396BD7A00074D89 /* UIViewControllerExtension.swift */; };
 		B680648323799979007F72B4 /* DeviseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B680648223799979007F72B4 /* DeviseService.swift */; };
+		B681D583239E55B700457039 /* GenericClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B681D582239E55B700457039 /* GenericClass.swift */; };
 		B6AC31872389962700D5C272 /* NetWorkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AC31862389962700D5C272 /* NetWorkError.swift */; };
 		B6AC318A2389988B00D5C272 /* DevisesTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AC31892389988B00D5C272 /* DevisesTestCase.swift */; };
 		B6AC6C792389326A00175298 /* DeviseServiceTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AC6C782389326A00175298 /* DeviseServiceTestCase.swift */; };
@@ -66,10 +66,10 @@
 		B6112600239A6C7E00AAC3B2 /* EditorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorViewController.swift; sourceTree = "<group>"; };
 		B623F4382399201800867A9B /* TranslateService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateService.swift; sourceTree = "<group>"; };
 		B6412A4A239699E500074D89 /* ExtensionUIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionUIImageView.swift; sourceTree = "<group>"; };
-		B6412A4C2396AB7E00074D89 /* LocalisationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalisationExtension.swift; sourceTree = "<group>"; };
 		B6412A4E2396B6C900074D89 /* Weather.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Weather.json; sourceTree = "<group>"; };
 		B6412A512396BD7A00074D89 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		B680648223799979007F72B4 /* DeviseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviseService.swift; sourceTree = "<group>"; };
+		B681D582239E55B700457039 /* GenericClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericClass.swift; sourceTree = "<group>"; };
 		B6A5E2FD2397F3BB00AE7440 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		B6A5E2FE2397F3BC00AE7440 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
 		B6AC31862389962700D5C272 /* NetWorkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetWorkError.swift; sourceTree = "<group>"; };
@@ -164,6 +164,7 @@
 				B60CC067236CA9E1007894A0 /* Devises.swift */,
 				B6105F032377285E00C041B5 /* WeatherApi.swift */,
 				B6AC31862389962700D5C272 /* NetWorkError.swift */,
+				B681D582239E55B700457039 /* GenericClass.swift */,
 			);
 			path = Modele;
 			sourceTree = "<group>";
@@ -182,7 +183,6 @@
 			isa = PBXGroup;
 			children = (
 				B6412A4A239699E500074D89 /* ExtensionUIImageView.swift */,
-				B6412A4C2396AB7E00074D89 /* LocalisationExtension.swift */,
 				B6412A512396BD7A00074D89 /* UIViewControllerExtension.swift */,
 			);
 			path = Extension;
@@ -353,11 +353,11 @@
 				B60CC062236CA912007894A0 /* WeatherViewController.swift in Sources */,
 				B60CC05A236CA7C1007894A0 /* ConvertViewController.swift in Sources */,
 				B6FD74B7238D9421005D7F87 /* WeatherService.swift in Sources */,
-				B6412A4D2396AB7E00074D89 /* LocalisationExtension.swift in Sources */,
 				B60CC064236CA9AC007894A0 /* TranslationAPI.swift in Sources */,
 				B60CC060236CA8A9007894A0 /* TranslateViewController.swift in Sources */,
 				B6AC31872389962700D5C272 /* NetWorkError.swift in Sources */,
 				B60CC045236CA744007894A0 /* AppDelegate.swift in Sources */,
+				B681D583239E55B700457039 /* GenericClass.swift in Sources */,
 				B61125FF239A6C2600AAC3B2 /* LanguagesViewController.swift in Sources */,
 				B6412A4B239699E500074D89 /* ExtensionUIImageView.swift in Sources */,
 				B60CC047236CA744007894A0 /* SceneDelegate.swift in Sources */,

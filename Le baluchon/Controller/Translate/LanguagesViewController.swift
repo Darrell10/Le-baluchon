@@ -10,15 +10,34 @@ import UIKit
 
 class LanguagesViewController: UIViewController {
     
+    //let translateService = TranslateService()
+    
     @IBOutlet weak var tableView: UITableView!
-
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        TranslateService.shared.fetchSupportedLanguages(completion: { (success) in
-            DispatchQueue.main.async { [unowned self] in
-                self.tableView.reloadData()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        supportedLang()
+    }
+    
+    func supportedLang() {
+        var urlParams = [String: String]()
+        urlParams["key"] = TranslateService.shared.apiKey
+        urlParams["target"] = Locale.current.languageCode ?? "en"
+        TranslateService.shared.getLanguageList(usingTranslationAPI: .supportedLanguages, urlParams: urlParams) { [unowned self] result in
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let results):
+                    for name in results.data.languages {
+                        let languageName = name.name
+                        let languageCode = name.language
+                        TranslateService.shared.supportedLanguages.append(TranslationLanguage(code: languageCode, name: languageName))
+                    }
+                    self.tableView.reloadData()
+                case .failure:
+                        self.presentAlert(title: "Erreur", message: "aucune langue disponible")
+                }
             }
-        })
+        }
     }
 }
 

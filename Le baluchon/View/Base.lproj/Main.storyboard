@@ -49,6 +49,14 @@
                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="alpha">
+                                        <real key="value" value="0.90000000000000002"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <outlet property="delegate" destination="wT3-Wm-N42" id="nKB-1Z-N6e"/>
                                 </connections>
@@ -172,6 +180,14 @@
                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="alpha">
+                                        <real key="value" value="0.90000000000000002"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </textView>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -281,8 +297,16 @@
                                     <constraint firstAttribute="trailing" secondItem="J7G-rY-51Q" secondAttribute="trailing" constant="10" id="sKW-0A-acj"/>
                                     <constraint firstItem="rfy-eG-bpI" firstAttribute="leading" secondItem="MZ9-Jg-2EI" secondAttribute="leading" constant="10" id="ykx-4H-Cwh"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="alpha">
+                                        <real key="value" value="0.90000000000000002"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kDB-Wl-7cg">
+                            <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kDB-Wl-7cg">
                                 <rect key="frame" x="20" y="339" width="335" height="200"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vTL-C6-fFd">
@@ -354,7 +378,6 @@
                     <tabBarItem key="tabBarItem" title="Meteo" image="icons8-sun_filled" id="6qu-5r-NiE"/>
                     <connections>
                         <outlet property="city1Label" destination="2xj-kH-drQ" id="cvt-nP-2uJ"/>
-                        <outlet property="city1View" destination="MZ9-Jg-2EI" id="WvA-mq-2Oi"/>
                         <outlet property="currentCityLabel" destination="7bm-2P-tUO" id="PRw-ru-wCP"/>
                         <outlet property="currentDescLabel" destination="O3c-fo-xQi" id="cX6-1C-Vb8"/>
                         <outlet property="currentIconImage" destination="vTL-C6-fFd" id="dYL-B3-szl"/>
@@ -362,7 +385,6 @@
                         <outlet property="desc1Label" destination="J7G-rY-51Q" id="Ltg-lo-QOl"/>
                         <outlet property="icon1Image" destination="l6x-rP-E7u" id="9KM-Fi-4BI"/>
                         <outlet property="tempLabel" destination="rfy-eG-bpI" id="7Mf-9N-ibF"/>
-                        <outlet property="userCityView" destination="kDB-Wl-7cg" id="IYw-rN-U0g"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WbS-3z-bX5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

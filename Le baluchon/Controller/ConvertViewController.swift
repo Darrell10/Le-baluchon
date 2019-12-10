@@ -13,7 +13,7 @@ final class ConvertViewController: UIViewController {
     // MARK: - Property
     
     private let deviseService = DeviseService()
- 
+    
     @IBOutlet private weak var dataTextField: UITextField!
     @IBOutlet private weak var convertResultLabel: UILabel!
     
@@ -26,17 +26,18 @@ final class ConvertViewController: UIViewController {
     private func convertDevise() {
         guard let amount = dataTextField.text, let number = Double(amount) else { return }
         deviseService.getCurrency { [unowned self] result in
-            switch result {
-            case .success(let ratesData):
-                guard let rate = ratesData.rates["USD"] else { return }
-                DispatchQueue.main.async {
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let ratesData):
+                    guard let rate = ratesData.rates["USD"] else { return }
                     self.convertResultLabel.text = ( " \(Devises.convert(value: number, with: rate)) $")
+                case .failure:
+                    self.presentAlert(title: "Erreur", message: "La conversion de devise à échouée")
                 }
-            case .failure:
-                self.presentAlert(title: "Erreur", message: "La conversion de devise à échouée")
             }
         }
     }
+    
 }
 
 // MARK: - Dismiss Keyboard

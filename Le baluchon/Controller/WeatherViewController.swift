@@ -12,14 +12,12 @@ import CoreLocation
 class WeatherViewController: UIViewController {
     
     private let weatherService = WeatherService()
-    
     var manager = CLLocationManager()
     
     // New York City View
     @IBOutlet weak var city1Label: UILabel!
     @IBOutlet weak var icon1Image: UIImageView!
     @IBOutlet weak var desc1Label: UILabel!
-    @IBOutlet weak var city1View: UIView!
     @IBOutlet weak var tempLabel: UILabel!
     
     // User City View
@@ -27,39 +25,63 @@ class WeatherViewController: UIViewController {
     @IBOutlet weak var currentTempLabel: UILabel!
     @IBOutlet weak var currentDescLabel: UILabel!
     @IBOutlet weak var currentIconImage: UIImageView!
-    @IBOutlet weak var userCityView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         updateNYWeather()
-        setup()
-        city1View.layer.cornerRadius = 10
-        city1View.alpha = 0.9
-        userCityView.layer.cornerRadius = 10
-        userCityView.alpha = 0.9
+        updateUserWeather()
     }
     
     private func updateNYWeather() {
         weatherService.getNYWeather { [unowned self] result in
-            switch result {
-            case .success(let cityData):
-                DispatchQueue.main.async {
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let cityData):
                     guard let first = cityData.list.first else { return }
                     self.tempLabel.text = "\(first.main.temp)°C"
                     self.city1Label.text = first.name
                     self.icon1Image.loadIcon(first.weather[0].icon)
                     self.desc1Label.text = first.weather[0].weatherDescription
+                case .failure:
+                    self.presentAlert(title: "Erreur", message: "Les données météo ont échouées")
                 }
-            case .failure:
-                self.presentAlert(title: "Erreur", message: "Les données météo ont échouées")
-                self.city1View.isHidden = true
+            }
+        }
+    }
+}
+
+extension WeatherViewController: CLLocationManagerDelegate {
+    
+    func updateUserWeather() {
+        manager.delegate = self
+        manager.requestAlwaysAuthorization()
+        manager.startUpdatingLocation()
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard let location = locations.last else { return }
+        manager.stopUpdatingLocation()
+        let coords = location.coordinate
+        WeatherService().getUserWeather(coords.latitude, coords.longitude) { [unowned self] result in
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let userData):
+                    guard let user = userData.list.first else { return }
+                    self.currentTempLabel.text = "\(user.main.temp)°C"
+                    self.currentCityLabel.text = user.name
+                    self.currentIconImage.loadIcon(user.weather[0].icon)
+                    self.currentDescLabel.text = user.weather[0].weatherDescription
+                case .failure:
+                    self.presentAlert(title: "Erreur", message: "Les données météo ont échouées")
+                }
             }
         }
     }
     
-    private func updateUserWeather() {
-        
-        
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print("Erreur: \(error.localizedDescription)")
     }
+    
 }
+
 
