@@ -8,12 +8,11 @@
 
 import Foundation
 
-final class TranslateService: NSObject {
+final class TranslateService {
     
     // MARK: - Property
     
-    static var shared = TranslateService()
-    //private init() {}
+    weak var delegateDisplay: DisplayDelegate?
     
     let apiKey = valueForAPIKey(named:"API_GOOGLE_TRANSLATE_CLIENT_ID")
     var sourceLanguageCode: String?
@@ -21,7 +20,6 @@ final class TranslateService: NSObject {
     var textToTranslate: String?
     var targetLanguageCode: String?
         
-    
     private var task: URLSessionDataTask?
     private var translateSession: URLSession
     
@@ -33,7 +31,7 @@ final class TranslateService: NSObject {
 // MARK: - API function
 
 extension TranslateService {
-    // Appel reseau avec le type result
+    
     func getDetectionLang(usingTranslationAPI api: TranslationAPI, urlParams: [String: String], completion: @escaping (Result<GoogleDetection, Error>) -> Void){
         if var components = URLComponents(string: api.getURL()) {
             components.queryItems = [URLQueryItem]()
@@ -124,6 +122,29 @@ extension TranslateService {
             }
         }
     }
+    
+    func detectionLang(forText text: String) {
+        let urlParams = ["key": apiKey, "q": text]
+        getDetectionLang(usingTranslationAPI: .detectLanguage, urlParams: urlParams) { [unowned self] result in
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let results):
+                    print(results)
+                    guard let data = results.data.detections.first else { return }
+                    guard let language = data.first?.language else { return }
+                    self.delegateDisplay?.presentAlert(title: "Detection de la langue", message: "Le langage suivant a été détecté:\n\n\(language)")
+                case .failure:
+                    self.delegateDisplay?.presentAlert(title: "Detection de la langue", message: "Oops! le language n'a pas été détecté.")
+                }
+            }
+        }
+    }
 }
+
+protocol DisplayDelegate: class {
+    func presentAlert(title: String, message: String)
+}
+
+
 
 

@@ -15,7 +15,7 @@ class WeatherServiceTestCase: XCTestCase {
     
         // MARK: - GetNYWeather function test
     
-    func testGetDeviseShouldPostFailedCallbackError() {
+    func testGetNYWeatherShouldPostFailedCallbackError() {
         let weatherService = WeatherService(
             weatherSession: URLSessionFake(data: nil, response: nil, error: FakeResponseData.errorWeather))
         
@@ -28,7 +28,7 @@ class WeatherServiceTestCase: XCTestCase {
         wait(for: [expectation], timeout: 0.01)
     }
     
-    func testGetDeviseShouldPostFailedCallbackIncorrectResponse() {
+    func testGetNYWeatherShouldPostFailedCallbackIncorrectResponse() {
         let weatherService = WeatherService(
             weatherSession: URLSessionFake(data: FakeResponseData.weatherCorrectData, response: FakeResponseData.responseKO, error: nil))
         
@@ -41,7 +41,7 @@ class WeatherServiceTestCase: XCTestCase {
         wait(for: [expectation], timeout: 0.01)
     }
     
-    func testGetDeviseShouldPostFailedCallbackIncorrectData() {
+    func testGetNYWeatherShouldPostFailedCallbackIncorrectData() {
         let weatherService = WeatherService(
             weatherSession: URLSessionFake(data: FakeResponseData.weatherIncorrectData, response: FakeResponseData.responseOK, error: nil))
         
@@ -54,7 +54,7 @@ class WeatherServiceTestCase: XCTestCase {
         wait(for: [expectation], timeout: 0.01)
     }
     
-    func testGetWeatherShouldPostSuccessCallbackIfNoErrorAndCorrectData() {
+    func testGetNYWeatherShouldPostSuccessCallbackIfNoErrorAndCorrectData() {
         let weatherService = WeatherService(
             weatherSession: URLSessionFake(data: FakeResponseData.weatherCorrectData, response: FakeResponseData.responseOK, error: nil))
         

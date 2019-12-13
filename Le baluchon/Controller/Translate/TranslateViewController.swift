@@ -12,7 +12,11 @@ import AVFoundation
 
 class TranslateViewController: UIViewController {
     
+    // MARK: - Property
+    
     @IBOutlet weak var textView: UITextView!
+    
+    var translateService = TranslateService()
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -23,22 +27,23 @@ class TranslateViewController: UIViewController {
         initiateTranslation()
     }
     
+    // MARK: - Translate function's
+    
     private func initiateTranslation() {
-        guard let textToTranslate = TranslateService.shared.textToTranslate else { return }
-        guard let targetLanguage = TranslateService.shared.targetLanguageCode else { return }
+        guard let textToTranslate = translateService.textToTranslate else { return }
+        guard let targetLanguage = translateService.targetLanguageCode else { return }
         var urlParams = [String: String]()
-        urlParams["key"] = TranslateService.shared.apiKey
+        urlParams["key"] = translateService.apiKey
         urlParams["q"] = textToTranslate
         urlParams["target"] = targetLanguage
         urlParams["format"] = "text"
-        if let sourceLanguage = TranslateService.shared.sourceLanguageCode {
+        if let sourceLanguage = translateService.sourceLanguageCode {
             urlParams["source"] = sourceLanguage
         }
-        TranslateService.shared.getTranslation(usingTranslationAPI: .translate, urlParams: urlParams) { [unowned self] result in
+        translateService.getTranslation(usingTranslationAPI: .translate, urlParams: urlParams) { [unowned self] result in
             DispatchQueue.main.async {
                 switch result {
                 case .success(let translate):
-                    
                     for text in translate.data.translations {
                         self.textView.text = text.translatedText
                         self.speak()
@@ -50,9 +55,10 @@ class TranslateViewController: UIViewController {
         }
     }
     
+    /// Function that has played voice translation
     private func speak() {
         if let texte = textView.text {
-            let languageSpeak = TranslateService.shared.targetLanguageCode
+            let languageSpeak = translateService.targetLanguageCode
             let speech = AVSpeechSynthesizer()
             let utterance = AVSpeechUtterance(string: texte)
             utterance.rate = 0.5

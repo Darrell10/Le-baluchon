@@ -26,13 +26,13 @@
 		<true/>
 	</dict>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>Utiliser la position de l'utilisateur</string>
+	<string>Utiliser la position de l&apos;utilisateur</string>
 	<key>NSLocationAlwaysUsageDescription</key>
-	<string>Utiliser la position de l'utilisateur</string>
+	<string>Utiliser la position de l&apos;utilisateur</string>
 	<key>NSLocationUsageDescription</key>
-	<string>Utiliser la position de l'utilisateur</string>
+	<string>Utiliser la position de l&apos;utilisateur</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Utiliser la position de l'utilisateur</string>
+	<string>Utiliser la position de l&apos;utilisateur</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
@@ -70,6 +70,12 @@
 		<string>UIInterfaceOrientationPortraitUpsideDown</string>
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
+	</array>
+	<key>UIAppFonts</key>
+	<array>
+		<string>NightStillComes.otf</string>
+		<string>NightStillComes_italic.otf</string>
+		<string>NightStillComes_bold.otf</string>
 	</array>
 </dict>
 </plist>

@@ -53,6 +53,7 @@ extension WeatherService {
         task?.resume()
     }
     
+    /// Get Weather at location's User from openweathermap API
     func getUserWeather (_ lat: Double, _ lon: Double, completion: @escaping (Result<WeatherApi, Error>) -> Void) {
         let urlUserRequest = URL(string: "\(openWeatherUrl)find?lat=\(lat)&lon=\(lon)&APPID=\(openWeatherClientID)&lang=\(lang)&units=\(unit)")
         guard let urlUser = urlUserRequest else { return }

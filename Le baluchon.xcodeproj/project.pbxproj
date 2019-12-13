@@ -24,6 +24,8 @@
 		B6412A4B239699E500074D89 /* ExtensionUIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6412A4A239699E500074D89 /* ExtensionUIImageView.swift */; };
 		B6412A4F2396B6C900074D89 /* Weather.json in Resources */ = {isa = PBXBuildFile; fileRef = B6412A4E2396B6C900074D89 /* Weather.json */; };
 		B6412A522396BD7A00074D89 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6412A512396BD7A00074D89 /* UIViewControllerExtension.swift */; };
+		B658452123A3AAF80057B1CC /* TranslateServiceTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B658452023A3AAF80057B1CC /* TranslateServiceTestCase.swift */; };
+		B658452323A3AEB90057B1CC /* TranslateDetection.json in Resources */ = {isa = PBXBuildFile; fileRef = B658452223A3AEB90057B1CC /* TranslateDetection.json */; };
 		B680648323799979007F72B4 /* DeviseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B680648223799979007F72B4 /* DeviseService.swift */; };
 		B681D583239E55B700457039 /* GenericClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B681D582239E55B700457039 /* GenericClass.swift */; };
 		B6AC31872389962700D5C272 /* NetWorkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AC31862389962700D5C272 /* NetWorkError.swift */; };
@@ -34,6 +36,9 @@
 		B6AC6C7F2389347C00175298 /* URLSessionFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AC6C7E2389347C00175298 /* URLSessionFake.swift */; };
 		B6CC47CC238AEDB2000BF1DA /* ApiKeys.plist in Resources */ = {isa = PBXBuildFile; fileRef = B6CC47CB238AEDB2000BF1DA /* ApiKeys.plist */; };
 		B6CC47CE238AEF19000BF1DA /* ApiKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6CC47CD238AEF19000BF1DA /* ApiKeys.swift */; };
+		B6F3DB9823A0FD4A006A2E7B /* NightStillComes.otf in Resources */ = {isa = PBXBuildFile; fileRef = B6F3DB9723A0FD4A006A2E7B /* NightStillComes.otf */; };
+		B6F3DB9A23A0FD64006A2E7B /* NightStillComes_bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = B6F3DB9923A0FD64006A2E7B /* NightStillComes_bold.otf */; };
+		B6F3DB9C23A0FD7A006A2E7B /* NightStillComes_italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = B6F3DB9B23A0FD7A006A2E7B /* NightStillComes_italic.otf */; };
 		B6FD74B7238D9421005D7F87 /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FD74B6238D9421005D7F87 /* WeatherService.swift */; };
 		B6FD74BE238DA45C005D7F87 /* WeatherServiceTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FD74BD238DA45C005D7F87 /* WeatherServiceTestCase.swift */; };
 /* End PBXBuildFile section */
@@ -68,6 +73,8 @@
 		B6412A4A239699E500074D89 /* ExtensionUIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionUIImageView.swift; sourceTree = "<group>"; };
 		B6412A4E2396B6C900074D89 /* Weather.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Weather.json; sourceTree = "<group>"; };
 		B6412A512396BD7A00074D89 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
+		B658452023A3AAF80057B1CC /* TranslateServiceTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateServiceTestCase.swift; sourceTree = "<group>"; };
+		B658452223A3AEB90057B1CC /* TranslateDetection.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = TranslateDetection.json; sourceTree = "<group>"; };
 		B680648223799979007F72B4 /* DeviseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviseService.swift; sourceTree = "<group>"; };
 		B681D582239E55B700457039 /* GenericClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericClass.swift; sourceTree = "<group>"; };
 		B6A5E2FD2397F3BB00AE7440 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
@@ -82,6 +89,9 @@
 		B6AC6C7E2389347C00175298 /* URLSessionFake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionFake.swift; sourceTree = "<group>"; };
 		B6CC47CB238AEDB2000BF1DA /* ApiKeys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = ApiKeys.plist; sourceTree = SOURCE_ROOT; };
 		B6CC47CD238AEF19000BF1DA /* ApiKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiKeys.swift; sourceTree = "<group>"; };
+		B6F3DB9723A0FD4A006A2E7B /* NightStillComes.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NightStillComes.otf; sourceTree = "<group>"; };
+		B6F3DB9923A0FD64006A2E7B /* NightStillComes_bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NightStillComes_bold.otf; sourceTree = "<group>"; };
+		B6F3DB9B23A0FD7A006A2E7B /* NightStillComes_italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NightStillComes_italic.otf; sourceTree = "<group>"; };
 		B6FD74B6238D9421005D7F87 /* WeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
 		B6FD74BD238DA45C005D7F87 /* WeatherServiceTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherServiceTestCase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -172,6 +182,9 @@
 		B60CC05E236CA853007894A0 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				B6F3DB9723A0FD4A006A2E7B /* NightStillComes.otf */,
+				B6F3DB9923A0FD64006A2E7B /* NightStillComes_bold.otf */,
+				B6F3DB9B23A0FD7A006A2E7B /* NightStillComes_italic.otf */,
 				B60CC046236CA744007894A0 /* SceneDelegate.swift */,
 				B60CC044236CA744007894A0 /* AppDelegate.swift */,
 				B60CC04D236CA745007894A0 /* Assets.xcassets */,
@@ -186,6 +199,15 @@
 				B6412A512396BD7A00074D89 /* UIViewControllerExtension.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		B658451F23A3AAAC0057B1CC /* TranslateTests */ = {
+			isa = PBXGroup;
+			children = (
+				B658452023A3AAF80057B1CC /* TranslateServiceTestCase.swift */,
+				B658452223A3AEB90057B1CC /* TranslateDetection.json */,
+			);
+			path = TranslateTests;
 			sourceTree = "<group>";
 		};
 		B68064862379A5E0007F72B4 /* Services */ = {
@@ -213,6 +235,7 @@
 			children = (
 				B6AC6C7E2389347C00175298 /* URLSessionFake.swift */,
 				B6AC6C7C2389330700175298 /* FakeResponseData.swift */,
+				B658451F23A3AAAC0057B1CC /* TranslateTests */,
 				B6FD74B8238DA336005D7F87 /* WeatherTests */,
 				B6AC31882389965D00D5C272 /* ConvertTests */,
 				B6AC6C72238931F700175298 /* Info.plist */,
@@ -322,10 +345,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6F3DB9C23A0FD7A006A2E7B /* NightStillComes_italic.otf in Resources */,
 				B60CC051236CA745007894A0 /* LaunchScreen.storyboard in Resources */,
 				B6CC47CC238AEDB2000BF1DA /* ApiKeys.plist in Resources */,
+				B6F3DB9823A0FD4A006A2E7B /* NightStillComes.otf in Resources */,
 				B60CC04E236CA745007894A0 /* Assets.xcassets in Resources */,
 				B60CC04C236CA744007894A0 /* Main.storyboard in Resources */,
+				B6F3DB9A23A0FD64006A2E7B /* NightStillComes_bold.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -335,6 +361,7 @@
 			files = (
 				B6412A4F2396B6C900074D89 /* Weather.json in Resources */,
 				B6AC6C7B238932DE00175298 /* Convert.json in Resources */,
+				B658452323A3AEB90057B1CC /* TranslateDetection.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -374,6 +401,7 @@
 				B6AC6C7F2389347C00175298 /* URLSessionFake.swift in Sources */,
 				B6AC6C7D2389330700175298 /* FakeResponseData.swift in Sources */,
 				B6FD74BE238DA45C005D7F87 /* WeatherServiceTestCase.swift in Sources */,
+				B658452123A3AAF80057B1CC /* TranslateServiceTestCase.swift in Sources */,
 				B6AC318A2389988B00D5C272 /* DevisesTestCase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -461,7 +489,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -516,7 +544,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -533,7 +561,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = U43D64A3HX;
 				INFOPLIST_FILE = "Le baluchon/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -552,7 +580,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = U43D64A3HX;
 				INFOPLIST_FILE = "Le baluchon/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

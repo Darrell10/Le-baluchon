@@ -25,7 +25,7 @@ final class DeviseService {
     }
 }
 
-// MARK: - API function
+    // MARK: - API function
 
 extension DeviseService {
     /// Get Currency from Fixer API

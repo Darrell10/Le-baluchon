@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension UIViewController {
+extension UIViewController: DisplayDelegate {
 
     func presentAlert(title: String, message: String){
     let alertVC = UIAlertController(title: title, message: message, preferredStyle: .alert)

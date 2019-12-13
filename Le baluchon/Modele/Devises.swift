@@ -14,6 +14,7 @@ struct Devises: Decodable {
 }
 
 extension Devises {
+    /// Convert Euros in Dollars with update rate
     static func convert(value: Double, with rate: Double) -> String {
         let convertResult = (value * rate)
         return String(format: "%.2f", convertResult)

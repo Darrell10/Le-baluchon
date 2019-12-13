@@ -11,6 +11,8 @@ import CoreLocation
 
 class WeatherViewController: UIViewController {
     
+    // MARK: - Property
+    
     private let weatherService = WeatherService()
     var manager = CLLocationManager()
     
@@ -32,6 +34,8 @@ class WeatherViewController: UIViewController {
         updateUserWeather()
     }
     
+    // MARK: - Update Weather function
+    
     private func updateNYWeather() {
         weatherService.getNYWeather { [unowned self] result in
             DispatchQueue.main.async {
@@ -50,6 +54,8 @@ class WeatherViewController: UIViewController {
     }
 }
 
+    // MARK: - Update Weather user location function
+
 extension WeatherViewController: CLLocationManagerDelegate {
     
     func updateUserWeather() {
@@ -58,6 +64,7 @@ extension WeatherViewController: CLLocationManagerDelegate {
         manager.startUpdatingLocation()
     }
     
+    /// Get the user's position and update the weather
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let location = locations.last else { return }
         manager.stopUpdatingLocation()

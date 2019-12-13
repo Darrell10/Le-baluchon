@@ -1,11 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="o43-xX-CNf">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="o43-xX-CNf">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="NightStillComes_bold.otf">
+            <string>NightStillComes-Bold</string>
+        </array>
+        <array key="NightStillComes_italic.otf">
+            <string>NightStillComes-Italic</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Tab Bar Controller-->
         <scene sceneID="awe-V3-dIr">
@@ -63,6 +71,7 @@
                             </textView>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="Zg7-uV-LmB" firstAttribute="top" secondItem="9JF-va-b8N" secondAttribute="top" constant="20" id="Bod-kW-sve"/>
@@ -235,12 +244,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Comparateur de météo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="eC3-hV-DQm">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Comparateur de meteo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="eC3-hV-DQm">
                                 <rect key="frame" x="20" y="64" width="335" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="nUs-K8-Tju"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <fontDescription key="fontDescription" name="NightStillComes-Bold" family="Night Still Comes" pointSize="30"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -252,7 +261,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="feA-rk-efW"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                        <fontDescription key="fontDescription" name="NightStillComes-Bold" family="Night Still Comes" pointSize="30"/>
                                         <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -268,16 +277,16 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="100" id="nSp-nR-6Z5"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <fontDescription key="fontDescription" name="Symbol" family="Symbol" pointSize="30"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J7G-rY-51Q">
-                                        <rect key="frame" x="10" y="170" width="315" height="20"/>
+                                        <rect key="frame" x="10" y="165" width="315" height="25"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="20" id="Yoa-4R-MsB"/>
+                                            <constraint firstAttribute="height" constant="25" id="Yoa-4R-MsB"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="italicSystem" pointSize="20"/>
+                                        <fontDescription key="fontDescription" name="NightStillComes-Italic" family="Night Still Comes" pointSize="25"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -302,7 +311,7 @@
                                         <integer key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="alpha">
-                                        <real key="value" value="0.90000000000000002"/>
+                                        <real key="value" value="0.94999999999999996"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
@@ -321,7 +330,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="OgI-su-hRd"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                        <fontDescription key="fontDescription" name="NightStillComes-Bold" family="Night Still Comes" pointSize="30"/>
                                         <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -330,16 +339,16 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="100" id="QeS-0O-QF6"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <fontDescription key="fontDescription" name="Symbol" family="Symbol" pointSize="30"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O3c-fo-xQi">
-                                        <rect key="frame" x="10" y="170" width="315" height="20"/>
+                                        <rect key="frame" x="10" y="165" width="315" height="25"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="20" id="7Ji-KW-Hdt"/>
+                                            <constraint firstAttribute="height" constant="25" id="7Ji-KW-Hdt"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="italicSystem" pointSize="20"/>
+                                        <fontDescription key="fontDescription" name="NightStillComes-Italic" family="Night Still Comes" pointSize="25"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -359,6 +368,14 @@
                                     <constraint firstAttribute="trailing" secondItem="O3c-fo-xQi" secondAttribute="trailing" constant="10" id="puT-lC-hyY"/>
                                     <constraint firstAttribute="trailing" secondItem="7bm-2P-tUO" secondAttribute="trailing" constant="10" id="rtB-ul-TSw"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="alpha">
+                                        <real key="value" value="0.94999999999999996"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

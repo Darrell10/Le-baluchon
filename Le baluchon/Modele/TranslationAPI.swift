@@ -14,7 +14,6 @@ struct TranslationLanguage {
     let name: String
 }
 
-
 struct GoogleTranslate: Decodable {
     let data: DataLanguage
 }
@@ -55,14 +54,12 @@ struct Language: Codable {
     let name: String
 }
 
-
-
+// MARK: - Enum Translation API
 
 enum TranslationAPI {
     case detectLanguage
     case translate
     case supportedLanguages
-    
     
     func getURL() -> String {
         var urlString = ""
