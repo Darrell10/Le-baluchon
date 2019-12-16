@@ -32,7 +32,7 @@ final class TranslateService {
 
 extension TranslateService {
     
-    func getDetectionLang(usingTranslationAPI api: TranslationAPI, urlParams: [String: String], completion: @escaping (Result<GoogleDetection, Error>) -> Void){
+    func getDetectionLang(usingTranslationAPI api: RequestAPI, urlParams: [String: String], completion: @escaping (Result<GoogleDetection, Error>) -> Void){
         if var components = URLComponents(string: api.getURL()) {
             components.queryItems = [URLQueryItem]()
             for (key, value) in urlParams {
@@ -62,7 +62,7 @@ extension TranslateService {
         }
     }
     
-    func getLanguageList(usingTranslationAPI api: TranslationAPI, urlParams: [String: String], completion: @escaping (Result<GoogleLanguage, Error>) -> Void){
+    func getLanguageList(usingTranslationAPI api: RequestAPI, urlParams: [String: String], completion: @escaping (Result<GoogleLanguage, Error>) -> Void){
         if var components = URLComponents(string: api.getURL()) {
             components.queryItems = [URLQueryItem]()
             for (key, value) in urlParams {
@@ -92,7 +92,7 @@ extension TranslateService {
         }
     }
     
-    func getTranslation(usingTranslationAPI api: TranslationAPI, urlParams: [String: String], completion: @escaping (Result<GoogleTranslate, Error>) -> Void){
+    func getTranslation(usingTranslationAPI api: RequestAPI, urlParams: [String: String], completion: @escaping (Result<GoogleTranslate, Error>) -> Void){
         if var components = URLComponents(string: api.getURL()) {
             components.queryItems = [URLQueryItem]()
             for (key, value) in urlParams {

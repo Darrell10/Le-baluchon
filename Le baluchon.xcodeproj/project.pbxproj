@@ -15,12 +15,13 @@
 		B60CC05A236CA7C1007894A0 /* ConvertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60CC059236CA7C1007894A0 /* ConvertViewController.swift */; };
 		B60CC060236CA8A9007894A0 /* TranslateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60CC05F236CA8A9007894A0 /* TranslateViewController.swift */; };
 		B60CC062236CA912007894A0 /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60CC061236CA912007894A0 /* WeatherViewController.swift */; };
-		B60CC064236CA9AC007894A0 /* TranslationAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60CC063236CA9AC007894A0 /* TranslationAPI.swift */; };
+		B60CC064236CA9AC007894A0 /* RequestAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60CC063236CA9AC007894A0 /* RequestAPI.swift */; };
 		B60CC068236CA9E1007894A0 /* Devises.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60CC067236CA9E1007894A0 /* Devises.swift */; };
 		B6105F042377285E00C041B5 /* WeatherApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6105F032377285E00C041B5 /* WeatherApi.swift */; };
 		B61125FF239A6C2600AAC3B2 /* LanguagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61125FE239A6C2600AAC3B2 /* LanguagesViewController.swift */; };
 		B6112601239A6C7E00AAC3B2 /* EditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6112600239A6C7E00AAC3B2 /* EditorViewController.swift */; };
 		B623F4392399201800867A9B /* TranslateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B623F4382399201800867A9B /* TranslateService.swift */; };
+		B6379C8C23A76F5C00826D90 /* Translate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6379C8B23A76F5C00826D90 /* Translate.swift */; };
 		B6412A4B239699E500074D89 /* ExtensionUIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6412A4A239699E500074D89 /* ExtensionUIImageView.swift */; };
 		B6412A4F2396B6C900074D89 /* Weather.json in Resources */ = {isa = PBXBuildFile; fileRef = B6412A4E2396B6C900074D89 /* Weather.json */; };
 		B6412A522396BD7A00074D89 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6412A512396BD7A00074D89 /* UIViewControllerExtension.swift */; };
@@ -64,12 +65,13 @@
 		B60CC059236CA7C1007894A0 /* ConvertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertViewController.swift; sourceTree = "<group>"; };
 		B60CC05F236CA8A9007894A0 /* TranslateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateViewController.swift; sourceTree = "<group>"; };
 		B60CC061236CA912007894A0 /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
-		B60CC063236CA9AC007894A0 /* TranslationAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationAPI.swift; sourceTree = "<group>"; };
+		B60CC063236CA9AC007894A0 /* RequestAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestAPI.swift; sourceTree = "<group>"; };
 		B60CC067236CA9E1007894A0 /* Devises.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Devises.swift; sourceTree = "<group>"; };
 		B6105F032377285E00C041B5 /* WeatherApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherApi.swift; sourceTree = "<group>"; };
 		B61125FE239A6C2600AAC3B2 /* LanguagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguagesViewController.swift; sourceTree = "<group>"; };
 		B6112600239A6C7E00AAC3B2 /* EditorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorViewController.swift; sourceTree = "<group>"; };
 		B623F4382399201800867A9B /* TranslateService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateService.swift; sourceTree = "<group>"; };
+		B6379C8B23A76F5C00826D90 /* Translate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Translate.swift; sourceTree = "<group>"; };
 		B6412A4A239699E500074D89 /* ExtensionUIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionUIImageView.swift; sourceTree = "<group>"; };
 		B6412A4E2396B6C900074D89 /* Weather.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Weather.json; sourceTree = "<group>"; };
 		B6412A512396BD7A00074D89 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
@@ -170,7 +172,8 @@
 			isa = PBXGroup;
 			children = (
 				B68064862379A5E0007F72B4 /* Services */,
-				B60CC063236CA9AC007894A0 /* TranslationAPI.swift */,
+				B60CC063236CA9AC007894A0 /* RequestAPI.swift */,
+				B6379C8B23A76F5C00826D90 /* Translate.swift */,
 				B60CC067236CA9E1007894A0 /* Devises.swift */,
 				B6105F032377285E00C041B5 /* WeatherApi.swift */,
 				B6AC31862389962700D5C272 /* NetWorkError.swift */,
@@ -380,13 +383,14 @@
 				B60CC062236CA912007894A0 /* WeatherViewController.swift in Sources */,
 				B60CC05A236CA7C1007894A0 /* ConvertViewController.swift in Sources */,
 				B6FD74B7238D9421005D7F87 /* WeatherService.swift in Sources */,
-				B60CC064236CA9AC007894A0 /* TranslationAPI.swift in Sources */,
+				B60CC064236CA9AC007894A0 /* RequestAPI.swift in Sources */,
 				B60CC060236CA8A9007894A0 /* TranslateViewController.swift in Sources */,
 				B6AC31872389962700D5C272 /* NetWorkError.swift in Sources */,
 				B60CC045236CA744007894A0 /* AppDelegate.swift in Sources */,
 				B681D583239E55B700457039 /* GenericClass.swift in Sources */,
 				B61125FF239A6C2600AAC3B2 /* LanguagesViewController.swift in Sources */,
 				B6412A4B239699E500074D89 /* ExtensionUIImageView.swift in Sources */,
+				B6379C8C23A76F5C00826D90 /* Translate.swift in Sources */,
 				B60CC047236CA744007894A0 /* SceneDelegate.swift in Sources */,
 				B60CC068236CA9E1007894A0 /* Devises.swift in Sources */,
 				B680648323799979007F72B4 /* DeviseService.swift in Sources */,

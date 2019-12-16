@@ -8,58 +8,15 @@
 
 import Foundation
 
-// MARK: - Translation struct
-struct TranslationLanguage {
-    let code: String
-    let name: String
-}
 
-struct GoogleTranslate: Decodable {
-    let data: DataLanguage
-}
+// MARK: - Enum Request API
 
-struct DataLanguage: Decodable {
-    let translations: [Translation]
-}
-
-struct Translation: Decodable {
-    let translatedText: String
-}
-
-// MARK: - Detection struct
-
-struct GoogleDetection: Decodable {
-    let data: Data
-}
-struct Data: Decodable {
-    let detections: [[Detection]]
-}
-
-struct Detection: Codable {
-    let language: String
-}
-
-// MARK: - Language struct
-
-struct GoogleLanguage: Codable {
-    let data: DataClass
-}
-
-struct DataClass: Codable {
-    let languages: [Language]
-}
-
-struct Language: Codable {
-    let language: String
-    let name: String
-}
-
-// MARK: - Enum Translation API
-
-enum TranslationAPI {
+enum RequestAPI {
     case detectLanguage
     case translate
     case supportedLanguages
+    case currency
+    case weather
     
     func getURL() -> String {
         var urlString = ""
@@ -71,6 +28,11 @@ enum TranslationAPI {
             urlString = "https://translation.googleapis.com/language/translate/v2"
         case .supportedLanguages:
             urlString = "https://translation.googleapis.com/language/translate/v2/languages"
+        case .currency:
+            urlString = "http://data.fixer.io/api/latest?"
+        case .weather:
+            urlString = "http://api.openweathermap.org/data/2.5/find"
+            
         }
         
         return urlString
@@ -83,4 +45,5 @@ enum TranslationAPI {
             return "POST"
         }
     }
+    
 }
