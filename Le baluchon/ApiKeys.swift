@@ -8,10 +8,6 @@
 
 import Foundation
 
-struct ApiKeys {
-    
-}
-
 func valueForAPIKey(named keyname:String) -> String {
     let filePath = Bundle.main.path(forResource: "ApiKeys", ofType: "plist")
     let plist = NSDictionary(contentsOfFile:filePath!)

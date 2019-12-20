@@ -8,7 +8,6 @@
 
 import Foundation
 
-
 // MARK: - Translation struct
 struct TranslationLanguage {
     let code: String
@@ -36,21 +35,21 @@ struct Data: Decodable {
     let detections: [[Detection]]
 }
 
-struct Detection: Codable {
+struct Detection: Decodable {
     let language: String
 }
 
 // MARK: - Language struct
 
-struct GoogleLanguage: Codable {
+struct GoogleLanguage: Decodable {
     let data: DataClass
 }
 
-struct DataClass: Codable {
+struct DataClass: Decodable {
     let languages: [Language]
 }
 
-struct Language: Codable {
+struct Language: Decodable {
     let language: String
     let name: String
 }

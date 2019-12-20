@@ -10,13 +10,15 @@ import XCTest
 @testable import Le_baluchon
 
 class DeviseServiceTestCase: XCTestCase {
+    var urlParams = [String: String]()
+    
     func testGetDeviseShouldPostFailedCallbackError() {
         let devisesService = DeviseService(
             convertSession: URLSessionFake(data: nil, response: nil, error: FakeResponseData.errorConvert))
         
         let expectation = XCTestExpectation(description: "wait for queue change")
         
-        devisesService.getCurrency { (devise) in
+        devisesService.getCurrency(usingTranslationAPI: .currency, urlParams: urlParams) { (devise) in
             XCTAssertNotNil(NetWorkError.noData)
             expectation.fulfill()
         }
@@ -29,7 +31,7 @@ class DeviseServiceTestCase: XCTestCase {
         
         let expectation = XCTestExpectation(description: "wait for queue change")
         
-        devisesService.getCurrency { (devise) in
+        devisesService.getCurrency(usingTranslationAPI: .currency, urlParams: urlParams) { (devise) in
             XCTAssertNotNil(NetWorkError.badUrl)
             expectation.fulfill()
         }
@@ -42,7 +44,7 @@ class DeviseServiceTestCase: XCTestCase {
         
         let expectation = XCTestExpectation(description: "wait for queue change")
         
-        devisesService.getCurrency { (devise) in
+        devisesService.getCurrency(usingTranslationAPI: .currency, urlParams: urlParams) { (devise) in
             XCTAssertNotNil(NetWorkError.jsonError)
             expectation.fulfill()
         }
@@ -55,12 +57,12 @@ class DeviseServiceTestCase: XCTestCase {
         
         let expectation = XCTestExpectation(description: "wait for queue change")
         
-        devisesService.getCurrency { (devise) in
+        devisesService.getCurrency(usingTranslationAPI: .currency, urlParams: urlParams) { (devise) in
             
-            //let date = "2019-11-23"
-            //let rates = ["USD": 1.10213]
-            //XCTAssertEqual(date, devise.date)
-            //XCTAssertEqual(rates, devise.rates)
+//            let date = "2019-11-23"
+//            let rates = ["USD": 1.10213]
+//            XCTAssertEqual(date, devise.)
+//            XCTAssertEqual(rates, devise.rates)
             XCTAssertNotNil(devise)
             expectation.fulfill()
         }

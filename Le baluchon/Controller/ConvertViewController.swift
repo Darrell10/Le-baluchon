@@ -25,10 +25,7 @@ final class ConvertViewController: UIViewController {
     
     private func convertDevise() {
         guard let amount = dataTextField.text, let number = Double(amount) else { return }
-        var urlParams = [String: String]()
-        urlParams["access_key"] = valueForAPIKey(named:"API_FIXER_CLIENT_ID")
-        urlParams["symbols"] = "USD"
-        deviseService.getCurrency(usingTranslationAPI: .currency, urlParams: urlParams) { [unowned self] result in
+        deviseService.getCurrency(currency: "USD") { [unowned self] result in
             DispatchQueue.main.async {
                 switch result {
                 case .success(let ratesData):

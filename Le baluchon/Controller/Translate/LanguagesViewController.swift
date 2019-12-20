@@ -13,27 +13,16 @@ class LanguagesViewController: UIViewController {
     // MARK: - Property
     
     var translateService = TranslateService()
-    @IBOutlet weak var tableView: UITableView!
+
+    @IBOutlet private weak var tableView: UITableView!
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         supportedLang()
     }
     
-    // MARK: - Transfer of data to the TranslateViewController
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "TranslationViewControllerSegue" {
-            let successVC = segue.destination as! TranslateViewController
-            successVC.translateService = translateService
-        }
-    }
-    
     func supportedLang() {
-        var urlParams = [String: String]()
-        urlParams["key"] = translateService.apiKey
-        urlParams["target"] = Locale.current.languageCode ?? "en"
-        translateService.getLanguageList(usingTranslationAPI: .supportedLanguages, urlParams: urlParams) { [unowned self] result in
+        translateService.getLanguageList() { [unowned self] result in
             DispatchQueue.main.async {
                 switch result {
                 case .success(let results):
@@ -55,9 +44,6 @@ class LanguagesViewController: UIViewController {
 // MARK: - TableView Property
 
 extension LanguagesViewController: UITableViewDataSource {
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return translateService.supportedLanguages.count
@@ -76,6 +62,6 @@ extension LanguagesViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.cellForRow(at: indexPath)?.setSelected(false, animated: true)
         translateService.targetLanguageCode = translateService.supportedLanguages[indexPath.row].code
-        performSegue(withIdentifier: "TranslationViewControllerSegue", sender: self)
+        dismiss(animated: true, completion: nil)
     }
 }

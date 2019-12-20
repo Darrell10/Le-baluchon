@@ -8,7 +8,7 @@
 
 import Foundation
 
-final class DeviseService {
+final class DeviseService: MapperEncoder {
     
     // MARK: - Property
     
@@ -24,36 +24,30 @@ final class DeviseService {
 
 extension DeviseService {
     /// Get Currency from Fixer API
-    func getCurrency(usingTranslationAPI api: RequestAPI, urlParams: [String: String], completion: @escaping (Result<Devises, Error>) -> Void) {
-        if var components = URLComponents(string: api.getURL()) {
-            components.queryItems = [URLQueryItem]()
-            for (key, value) in urlParams {
-                components.queryItems?.append(URLQueryItem(name: key, value: value))
+    func getCurrency(currency: String, completion: @escaping (Result<Devises, Error>) -> Void) {
+        guard let url = URL(string: "http://data.fixer.io/api/latest?") else { return }
+        let params = ["access_key": valueForAPIKey(named:"API_FIXER_CLIENT_ID"), "symbols": "\(currency)"]
+        let urlEncoded = encode(baseUrl: url, parameters: params)
+        task = convertSession.dataTask(with: urlEncoded) { (data, response, error) in
+            guard let data = data, error == nil else {
+                completion(.failure(NetWorkError.noData))
+                return
             }
-            if let url = components.url {
-                var request = URLRequest(url: url)
-                request.httpMethod = api.getHTTPMethod()
-                task = convertSession.dataTask(with: request) { (data, response, error) in
-                    guard let data = data, error == nil else {
-                        completion(.failure(NetWorkError.noData))
-                        return
-                    }
-                    guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
-                        completion(.failure(NetWorkError.badUrl))
-                        return
-                    }
-                    do {
-                        let devise = try JSONDecoder().decode(Devises.self, from: data)
-                        completion(.success(devise))
-                    } catch {
-                        completion(.failure(NetWorkError.jsonError))
-                    }
-                }
-                task?.resume()
+            guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
+                completion(.failure(NetWorkError.badUrl))
+                return
+            }
+            do {
+                let devise = try JSONDecoder().decode(Devises.self, from: data)
+                completion(.success(devise))
+            } catch {
+                completion(.failure(NetWorkError.jsonError))
             }
         }
+        task?.resume()
     }
 }
+
 
 
 

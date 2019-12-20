@@ -8,7 +8,7 @@
 
 import Foundation
 
-final class WeatherService {
+final class WeatherService: MapperEncoder {
     
     // MARK: - Property
     private var task: URLSessionDataTask?
@@ -23,35 +23,27 @@ final class WeatherService {
 
 extension WeatherService {
     /// Get weather from openweathermap API
-    func getWeather(usingTranslationAPI api: RequestAPI, urlParams: [String: String],completion: @escaping (Result<WeatherApi, Error>) -> Void) {
-        if var components = URLComponents(string: api.getURL()) {
-            components.queryItems = [URLQueryItem]()
-            for (key, value) in urlParams {
-                components.queryItems?.append(URLQueryItem(name: key, value: value))
+    func getWeather(lat: String, lon: String, completion: @escaping (Result<WeatherApi, Error>) -> Void) {
+        guard let url = URL(string: "http://api.openweathermap.org/data/2.5/find") else { return }
+        let params = ["APPID": valueForAPIKey(named:"API_OPENWEATHER_CLIENT_ID"), "lang": Locale.current.languageCode ?? "en", "units": "metric", "lat": "\(lat)", "lon": "\(lon)"]
+        let urlEncoded = encode(baseUrl: url, parameters: params)
+        task = weatherSession.dataTask(with: urlEncoded) { (data, response, error) in
+            guard let data = data, error == nil else {
+                completion(.failure(NetWorkError.noData))
+                return
             }
-            if let url = components.url {
-                var request = URLRequest(url: url)
-                request.httpMethod = api.getHTTPMethod()
-                task = weatherSession.dataTask(with: request) { (data, response, error) in
-                    guard let data = data, error == nil else {
-                        completion(.failure(NetWorkError.noData))
-                        return
-                    }
-                    guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
-                        completion(.failure(NetWorkError.badUrl))
-                        return
-                    }
-                    do {
-                        let weather = try JSONDecoder().decode(WeatherApi.self, from: data)
-                        completion(.success(weather))
-                    } catch {
-                        completion(.failure(NetWorkError.jsonError))
-                    }
-                }
-                task?.resume()
+            guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
+                completion(.failure(NetWorkError.badUrl))
+                return
+            }
+            do {
+                let weather = try JSONDecoder().decode(WeatherApi.self, from: data)
+                completion(.success(weather))
+            } catch {
+                completion(.failure(NetWorkError.jsonError))
             }
         }
-        
+        task?.resume()
     }
 }
 

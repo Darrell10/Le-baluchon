@@ -37,13 +37,9 @@ class WeatherViewController: UIViewController {
     // MARK: - Update Weather function
     
     private func updateNYWeather() {
-        var urlParams = [String: String]()
-        urlParams["APPID"] = valueForAPIKey(named:"API_OPENWEATHER_CLIENT_ID")
-        urlParams["lang"] = Locale.current.languageCode ?? "en"
-        urlParams["units"] = "metric"
-        urlParams["lat"] = "40.7306"
-        urlParams["lon"] = "-73.9867"
-        weatherService.getWeather(usingTranslationAPI: .weather, urlParams: urlParams) { [unowned self] result in
+        let nyLat = "40.7306"
+        let nyLon = "-73.9867"
+        weatherService.getWeather(lat: nyLat, lon: nyLon) { [unowned self] result in
             DispatchQueue.main.async {
                 switch result {
                 case .success(let cityData):
@@ -75,13 +71,9 @@ extension WeatherViewController: CLLocationManagerDelegate {
         guard let location = locations.last else { return }
         manager.stopUpdatingLocation()
         let coords = location.coordinate
-        var urlParams = [String: String]()
-        urlParams["APPID"] = valueForAPIKey(named:"API_OPENWEATHER_CLIENT_ID")
-        urlParams["lang"] = Locale.current.languageCode ?? "en"
-        urlParams["units"] = "metric"
-        urlParams["lat"] = "\(coords.latitude)"
-        urlParams["lon"] = "\(coords.longitude)"
-        weatherService.getWeather(usingTranslationAPI: .weather, urlParams: urlParams) { [unowned self] result in
+        let userlat = "\(coords.latitude)"
+        let userLon = "\(coords.longitude)"
+        weatherService.getWeather(lat: userlat, lon: userLon) { [unowned self] result in
             DispatchQueue.main.async {
                 switch result {
                 case .success(let userData):
