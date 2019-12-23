@@ -9,7 +9,7 @@
 import UIKit
 import CoreLocation
 
-class WeatherViewController: UIViewController {
+final class WeatherViewController: UIViewController {
     
     // MARK: - Property
     
@@ -37,9 +37,7 @@ class WeatherViewController: UIViewController {
     // MARK: - Update Weather function
     
     private func updateNYWeather() {
-        let nyLat = "40.7306"
-        let nyLon = "-73.9867"
-        weatherService.getWeather(lat: nyLat, lon: nyLon) { [unowned self] result in
+        weatherService.getWeather(lat: "40.7306", lon: "-73.9867") { [unowned self] result in
             DispatchQueue.main.async {
                 switch result {
                 case .success(let cityData):

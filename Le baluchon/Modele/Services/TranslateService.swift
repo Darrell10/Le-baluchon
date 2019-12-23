@@ -11,8 +11,6 @@ import Foundation
 final class TranslateService: MapperEncoder {
     
     // MARK: - Property
-    var supportedLanguages = [TranslationLanguage]()
-    var targetLanguageCode: String = "en"
     
     private var task: URLSessionDataTask?
     private var translateSession: URLSession
@@ -25,10 +23,10 @@ final class TranslateService: MapperEncoder {
 // MARK: - API function
 
 extension TranslateService {
-    
+    /// Get detection language from Google Translate API
     func getDetectionLang(text:String, completion: @escaping (Result<GoogleDetection, Error>) -> Void){
         guard let url = URL(string: "https://translation.googleapis.com/language/translate/v2/detect") else { return }
-        let params = ["key": valueForAPIKey(named:"API_GOOGLE_TRANSLATE_CLIENT_ID"), "q": "\(text)"]
+        let params = ["key": ApiConfig.googleKey, "q": "\(text)"]
         let urlEncoded = encode(baseUrl: url, parameters: params)
         task = translateSession.dataTask(with: urlEncoded) { (data, response, error) in
             guard let data = data, error == nil else {
@@ -49,9 +47,10 @@ extension TranslateService {
         task?.resume()
     }
     
+    /// Get language list from Google Translate API
     func getLanguageList(completion: @escaping (Result<GoogleLanguage, Error>) -> Void){
         guard let url = URL(string: "https://translation.googleapis.com/language/translate/v2/languages") else { return }
-        let params = ["key": valueForAPIKey(named:"API_GOOGLE_TRANSLATE_CLIENT_ID"), "target": Locale.current.languageCode ?? "en"]
+        let params = ["key": ApiConfig.googleKey, "target": Locale.current.languageCode ?? "en"]
         let urlEncoded = encode(baseUrl: url, parameters: params)
         task = translateSession.dataTask(with: urlEncoded) { (data, response, error) in
             guard let data = data, error == nil else {
@@ -72,9 +71,10 @@ extension TranslateService {
         task?.resume()
     }
     
-    func getTranslation(text:String, completion: @escaping (Result<GoogleTranslate, Error>) -> Void){
+    /// Get translation from Google Translate API
+    func getTranslation(text:String, code: String, completion: @escaping (Result<GoogleTranslate, Error>) -> Void){
         guard let url = URL(string: "https://translation.googleapis.com/language/translate/v2") else { return }
-        let params = ["key": valueForAPIKey(named:"API_GOOGLE_TRANSLATE_CLIENT_ID"), "target": "\(targetLanguageCode)", "format": "text", "q": "\(text)"]
+        let params = ["key": ApiConfig.googleKey, "target": "\(code)", "format": "text", "q": "\(text)"]
         let urlEncoded = encode(baseUrl: url, parameters: params)
         task = translateSession.dataTask(with: urlEncoded) { (data, response, error) in
             guard let data = data, error == nil else {
@@ -93,10 +93,7 @@ extension TranslateService {
             }
         }
         task?.resume()
-    }
-    
+    }    
 }
-
-
 
 

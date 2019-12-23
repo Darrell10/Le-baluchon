@@ -144,14 +144,14 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Choix Langue" id="Es8-Mk-SNz">
                             <connections>
-                                <action selector="getLanguage:" destination="wT3-Wm-N42" id="LRT-PH-Mbe"/>
+                                <action selector="getLanguageListBtn:" destination="wT3-Wm-N42" id="jYx-eU-fn4"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="editorTextView" destination="tU3-VY-zKx" id="1Oc-FL-0dz"/>
                         <outlet property="translateTextView" destination="aR6-Pa-jxj" id="imi-49-xL5"/>
-                        <segue destination="gUp-dA-aDq" kind="presentation" identifier="LanguagesViewControllerSegue" id="OG2-jP-epu"/>
+                        <segue destination="gUp-dA-aDq" kind="presentation" identifier="Segue" id="CMG-kP-WEG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PG7-RM-QzJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -161,7 +161,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1101.5999999999999" y="-217.24137931034483"/>
+            <point key="canvasLocation" x="1268" y="-219"/>
         </scene>
         <!--Languages View Controller-->
         <scene sceneID="BhM-W6-1fm">
@@ -222,7 +222,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zF1-va-KBv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1804" y="-218"/>
+            <point key="canvasLocation" x="2190" y="-218"/>
         </scene>
         <!--Traducteur-->
         <scene sceneID="cZK-iM-h89">

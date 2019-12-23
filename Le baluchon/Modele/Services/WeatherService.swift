@@ -25,7 +25,7 @@ extension WeatherService {
     /// Get weather from openweathermap API
     func getWeather(lat: String, lon: String, completion: @escaping (Result<WeatherApi, Error>) -> Void) {
         guard let url = URL(string: "http://api.openweathermap.org/data/2.5/find") else { return }
-        let params = ["APPID": valueForAPIKey(named:"API_OPENWEATHER_CLIENT_ID"), "lang": Locale.current.languageCode ?? "en", "units": "metric", "lat": "\(lat)", "lon": "\(lon)"]
+        let params = ["APPID": ApiConfig.openWeatherKey, "lang": Locale.current.languageCode ?? "en", "units": "metric", "lat": "\(lat)", "lon": "\(lon)"]
         let urlEncoded = encode(baseUrl: url, parameters: params)
         task = weatherSession.dataTask(with: urlEncoded) { (data, response, error) in
             guard let data = data, error == nil else {

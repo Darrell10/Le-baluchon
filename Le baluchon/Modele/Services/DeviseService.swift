@@ -26,7 +26,7 @@ extension DeviseService {
     /// Get Currency from Fixer API
     func getCurrency(currency: String, completion: @escaping (Result<Devises, Error>) -> Void) {
         guard let url = URL(string: "http://data.fixer.io/api/latest?") else { return }
-        let params = ["access_key": valueForAPIKey(named:"API_FIXER_CLIENT_ID"), "symbols": "\(currency)"]
+        let params = ["access_key": ApiConfig.fixerKey, "symbols": "\(currency)"]
         let urlEncoded = encode(baseUrl: url, parameters: params)
         task = convertSession.dataTask(with: urlEncoded) { (data, response, error) in
             guard let data = data, error == nil else {

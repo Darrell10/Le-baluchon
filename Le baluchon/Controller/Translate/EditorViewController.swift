@@ -13,7 +13,8 @@ class EditorViewController: UIViewController {
     
     // MARK: - Property
     
-    var translateService = TranslateService()
+    private let translateService = TranslateService()
+    private var codeLanguage = ""
     
     @IBOutlet weak var editorTextView: UITextView!
     @IBOutlet weak var translateTextView: UITextView!
@@ -21,68 +22,18 @@ class EditorViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-    
-    // MARK: - Transfer of data to the LanguagesViewController
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "LanguagesViewControllerSegue" {
-            let successVC = segue.destination as! LanguagesViewController
-            successVC.translateService = translateService
-        }
-    }
-    
+}
+
     // MARK: - Navigations Buttons
-    
+
+extension EditorViewController: LanguageDelegate {
+    // Detect Language
     @IBAction func detectLanguage(_ sender: Any) {
         if editorTextView.text == "" {
             //present an alert if text view is empty
             self.presentAlert(title: "Detection de la langue", message: "le texte est vide !")
         } else {
             detectionLang()
-        }
-    }
-    
-    @IBAction func getLanguage(_ sender: Any) {
-        if editorTextView.text == "" {
-            //present an alert if text view is empty
-            self.presentAlert(title: "Traduction du texte", message: "le texte est vide !")
-        } else {
-            performSegue(withIdentifier: "LanguagesViewControllerSegue", sender: self)
-        }
-    }
-    
-    // MARK: - Translate Button action
-    
-    @IBAction private func translateLanguage(_ sender: Any) {
-            initiateTranslation()
-    }
-    
-    private func initiateTranslation() {
-        guard let textToTranslate = editorTextView.text else { return }
-        translateService.getTranslation(text: textToTranslate) { [unowned self] result in
-            DispatchQueue.main.async {
-                switch result {
-                case .success(let translate):
-                    for text in translate.data.translations {
-                        self.translateTextView.text = text.translatedText
-                        self.speak()
-                    }
-                case .failure:
-                    self.presentAlert(title: "Erreur", message: "Les données ont échouées")
-                }
-            }
-        }
-    }
-    
-    /// Function that has played voice translation
-    private func speak() {
-        if let text = translateTextView.text {
-            let languageSpeak = translateService.targetLanguageCode
-            let speech = AVSpeechSynthesizer()
-            let utterance = AVSpeechUtterance(string: text)
-            utterance.rate = 0.5
-            utterance.voice = AVSpeechSynthesisVoice(language: languageSpeak)
-            speech.speak(utterance)
         }
     }
     
@@ -104,6 +55,63 @@ class EditorViewController: UIViewController {
         }
     }
     
+    // Get Language List
+    
+    @IBAction func getLanguageListBtn(_ sender: Any) {
+        performSegue(withIdentifier: "Segue", sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "Segue", let second = segue.destination as? LanguagesViewController {
+            second.delegate = self
+        }
+    }
+    
+    func passLanguageBack(_ languageCode: String) {
+        codeLanguage = languageCode
+    }
+}
+
+    // MARK: - Translate Button action
+
+extension EditorViewController {
+    @IBAction private func translateLanguage(_ sender: Any) {
+        if editorTextView.text == "" {
+            //present an alert if text view is empty
+            self.presentAlert(title: "Detection de la langue", message: "le texte est vide !")
+        } else {
+            initiateTranslation()
+        }
+    }
+    
+    private func initiateTranslation() {
+        guard let textToTranslate = editorTextView.text else { return }
+        translateService.getTranslation(text: textToTranslate, code: codeLanguage) { [unowned self] result in
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let translate):
+                    for text in translate.data.translations {
+                        self.translateTextView.text = text.translatedText
+                        self.speak()
+                    }
+                case .failure:
+                    self.presentAlert(title: "Erreur", message: "Les données ont échouées")
+                }
+            }
+        }
+    }
+    
+    /// Function that has played voice translation
+    private func speak() {
+        if let text = translateTextView.text {
+            let languageSpeak = codeLanguage
+            let speech = AVSpeechSynthesizer()
+            let utterance = AVSpeechUtterance(string: text)
+            utterance.rate = 0.5
+            utterance.voice = AVSpeechSynthesisVoice(language: languageSpeak)
+            speech.speak(utterance)
+        }
+    }
 }
 
 // MARK: - Dismiss keyboard
