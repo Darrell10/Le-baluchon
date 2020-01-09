@@ -41,6 +41,7 @@ extension TranslateService {
                 let results = try JSONDecoder().decode(GoogleDetection.self, from: data)
                 completion(.success(results))
             } catch {
+                print(error.localizedDescription)
                 completion(.failure(NetWorkError.jsonError))
             }
         }
@@ -65,6 +66,7 @@ extension TranslateService {
                 let results = try JSONDecoder().decode(GoogleLanguage.self, from: data)
                 completion(.success(results))
             } catch {
+                print(error.localizedDescription)
                 completion(.failure(NetWorkError.jsonError))
             }
         }
@@ -89,6 +91,7 @@ extension TranslateService {
                 let results = try JSONDecoder().decode(GoogleTranslate.self, from: data)
                 completion(.success(results))
             } catch {
+                print(error.localizedDescription)
                 completion(.failure(NetWorkError.jsonError))
             }
         }
@@ -96,4 +99,8 @@ extension TranslateService {
     }    
 }
 
+// MARK: - Language back Protocol
 
+protocol LanguageDelegate {
+    func passLanguageBack(_ languageCode: String)
+}

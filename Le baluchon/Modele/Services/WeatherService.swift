@@ -40,6 +40,7 @@ extension WeatherService {
                 let weather = try JSONDecoder().decode(WeatherApi.self, from: data)
                 completion(.success(weather))
             } catch {
+                print(error.localizedDescription)
                 completion(.failure(NetWorkError.jsonError))
             }
         }

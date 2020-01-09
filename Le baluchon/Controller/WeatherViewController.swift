@@ -52,19 +52,20 @@ final class WeatherViewController: UIViewController {
             }
         }
     }
+    
 }
 
     // MARK: - Update Weather user location function
 
 extension WeatherViewController: CLLocationManagerDelegate {
     
+    /// Get the user's position and update the weather
     func updateUserWeather() {
         manager.delegate = self
         manager.requestAlwaysAuthorization()
         manager.startUpdatingLocation()
     }
     
-    /// Get the user's position and update the weather
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let location = locations.last else { return }
         manager.stopUpdatingLocation()

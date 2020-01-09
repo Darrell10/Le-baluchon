@@ -72,10 +72,6 @@
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>UIAppFonts</key>
-	<array>
-		<string>NightStillComes.otf</string>
-		<string>NightStillComes_italic.otf</string>
-		<string>NightStillComes_bold.otf</string>
-	</array>
+	<array/>
 </dict>
 </plist>

@@ -10,7 +10,8 @@ import XCTest
 @testable import Le_baluchon
 
 class TranslateServiceTestCase: XCTestCase {
-    var urlParams = ["key": "", "q": ""]
+    var text = "test"
+    var code = "en"
     
     // MARK: - Detection Language Test
     
@@ -20,7 +21,7 @@ class TranslateServiceTestCase: XCTestCase {
         
         let expectation = XCTestExpectation(description: "wait for queue change")
         
-        translateService.getDetectionLang(usingTranslationAPI: .detectLanguage, urlParams: urlParams) { (translate) in
+        translateService.getDetectionLang(text: text) { (translate) in
             XCTAssertNotNil(NetWorkError.noData)
             expectation.fulfill()
         }
@@ -33,7 +34,7 @@ class TranslateServiceTestCase: XCTestCase {
         
         let expectation = XCTestExpectation(description: "wait for queue change")
         
-        translateService.getDetectionLang(usingTranslationAPI: .detectLanguage, urlParams: urlParams) { (translate) in
+        translateService.getDetectionLang(text: text) { (translate) in
             XCTAssertNotNil(NetWorkError.badUrl)
             expectation.fulfill()
         }
@@ -46,7 +47,7 @@ class TranslateServiceTestCase: XCTestCase {
         
         let expectation = XCTestExpectation(description: "wait for queue change")
         
-        translateService.getDetectionLang(usingTranslationAPI: .detectLanguage, urlParams: urlParams) { (translate) in
+        translateService.getDetectionLang(text: text) { (translate) in
             XCTAssertNotNil(NetWorkError.jsonError)
             expectation.fulfill()
         }
@@ -56,12 +57,20 @@ class TranslateServiceTestCase: XCTestCase {
     func testGetDetectionShouldPostSuccessCallbackIfNoErrorAndCorrectData() {
         let translateService = TranslateService(
             translateSession: URLSessionFake(data: FakeResponseData.translateCorrectData, response: FakeResponseData.responseOK, error: nil))
-
+        
         let expectation = XCTestExpectation(description: "wait for queue change")
-
-        translateService.getDetectionLang(usingTranslationAPI: .detectLanguage, urlParams: urlParams) { (translate) in
-            XCTAssertNotNil(translate)
-            expectation.fulfill()
+        translateService.getDetectionLang(text: text) { result in
+            switch result {
+            case .success(let results):
+                guard let data = results.data.detections.first else { return }
+                guard let language = data.first?.language else { return }
+                XCTAssertTrue(language == "fr")
+                expectation.fulfill()
+            case .failure(let error):
+                print(error)
+                
+            }
+            
         }
         wait(for: [expectation], timeout: 0.01)
     }
@@ -74,7 +83,7 @@ class TranslateServiceTestCase: XCTestCase {
         
         let expectation = XCTestExpectation(description: "wait for queue change")
         
-        translateService.getLanguageList(usingTranslationAPI: .supportedLanguages, urlParams: urlParams) { (translate) in
+        translateService.getLanguageList() { (translate) in
             XCTAssertNotNil(NetWorkError.noData)
             expectation.fulfill()
         }
@@ -87,7 +96,7 @@ class TranslateServiceTestCase: XCTestCase {
         
         let expectation = XCTestExpectation(description: "wait for queue change")
         
-        translateService.getLanguageList(usingTranslationAPI: .supportedLanguages, urlParams: urlParams) { (translate) in
+        translateService.getLanguageList() { (translate) in
             XCTAssertNotNil(NetWorkError.badUrl)
             expectation.fulfill()
         }
@@ -100,7 +109,7 @@ class TranslateServiceTestCase: XCTestCase {
         
         let expectation = XCTestExpectation(description: "wait for queue change")
         
-        translateService.getLanguageList(usingTranslationAPI: .supportedLanguages, urlParams: urlParams) { (translate) in
+        translateService.getLanguageList() { (translate) in
             XCTAssertNotNil(NetWorkError.jsonError)
             expectation.fulfill()
         }
@@ -110,10 +119,10 @@ class TranslateServiceTestCase: XCTestCase {
     func testGetvShouldPostSuccessCallbackIfNoErrorAndCorrectData() {
         let translateService = TranslateService(
             translateSession: URLSessionFake(data: FakeResponseData.translateCorrectData, response: FakeResponseData.responseOK, error: nil))
-
+        
         let expectation = XCTestExpectation(description: "wait for queue change")
-
-        translateService.getLanguageList(usingTranslationAPI: .supportedLanguages, urlParams: urlParams) { (translate) in
+        
+        translateService.getLanguageList() { (translate) in
             XCTAssertNotNil(translate)
             expectation.fulfill()
         }
@@ -128,7 +137,7 @@ class TranslateServiceTestCase: XCTestCase {
         
         let expectation = XCTestExpectation(description: "wait for queue change")
         
-        translateService.getTranslation(usingTranslationAPI: .translate, urlParams: urlParams) { (translate) in
+        translateService.getTranslation(text:text, code: code) { (translate) in
             XCTAssertNotNil(NetWorkError.noData)
             expectation.fulfill()
         }
@@ -141,7 +150,7 @@ class TranslateServiceTestCase: XCTestCase {
         
         let expectation = XCTestExpectation(description: "wait for queue change")
         
-        translateService.getTranslation(usingTranslationAPI: .translate, urlParams: urlParams) { (translate) in
+        translateService.getTranslation(text:text, code: code) { (translate) in
             XCTAssertNotNil(NetWorkError.badUrl)
             expectation.fulfill()
         }
@@ -154,7 +163,7 @@ class TranslateServiceTestCase: XCTestCase {
         
         let expectation = XCTestExpectation(description: "wait for queue change")
         
-        translateService.getTranslation(usingTranslationAPI: .translate, urlParams: urlParams) { (translate) in
+        translateService.getTranslation(text:text, code: code) { (translate) in
             XCTAssertNotNil(NetWorkError.jsonError)
             expectation.fulfill()
         }
@@ -164,10 +173,10 @@ class TranslateServiceTestCase: XCTestCase {
     func testgetTranslationShouldPostSuccessCallbackIfNoErrorAndCorrectData() {
         let translateService = TranslateService(
             translateSession: URLSessionFake(data: FakeResponseData.translateCorrectData, response: FakeResponseData.responseOK, error: nil))
-
+        
         let expectation = XCTestExpectation(description: "wait for queue change")
-
-        translateService.getTranslation(usingTranslationAPI: .translate, urlParams: urlParams) { (translate) in
+        
+        translateService.getTranslation(text:text, code: code) { (translate) in
             XCTAssertNotNil(translate)
             expectation.fulfill()
         }

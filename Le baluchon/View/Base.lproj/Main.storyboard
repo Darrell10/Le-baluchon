@@ -1,23 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="o43-xX-CNf">
-    <device id="retina4_0" orientation="portrait" appearance="light"/>
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="NightStillComes.otf">
-            <string>NightStillComes</string>
-        </array>
-        <array key="NightStillComes_bold.otf">
-            <string>NightStillComes-Bold</string>
-        </array>
-        <array key="NightStillComes_italic.otf">
-            <string>NightStillComes-Italic</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--Tab Bar Controller-->
         <scene sceneID="awe-V3-dIr">
@@ -43,23 +32,23 @@
             <objects>
                 <viewController id="wT3-Wm-N42" customClass="EditorViewController" customModule="Le_baluchon" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hUI-JW-ID4">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="475"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Traducteur de langues" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="Zg7-uV-LmB">
-                                <rect key="frame" x="20" y="20" width="280" height="40"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Language translator" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="Zg7-uV-LmB">
+                                <rect key="frame" x="20" y="20" width="374" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="kHY-2e-rgL"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="NightStillComes-Bold" family="Night Still Comes" pointSize="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dZc-UI-b0w" customClass="ShadowView" customModule="Le_baluchon" customModuleProvider="target">
-                                <rect key="frame" x="10" y="70" width="300" height="150"/>
+                                <rect key="frame" x="10" y="70" width="394" height="150"/>
                                 <subviews>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="tU3-VY-zKx">
-                                        <rect key="frame" x="5" y="5" width="290" height="140"/>
+                                        <rect key="frame" x="5" y="5" width="384" height="140"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="20"/>
@@ -87,10 +76,10 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="804-Tb-bCj" customClass="ShadowView" customModule="Le_baluchon" customModuleProvider="target">
-                                <rect key="frame" x="10" y="285" width="300" height="150"/>
+                                <rect key="frame" x="10" y="310" width="394" height="150"/>
                                 <subviews>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="aR6-Pa-jxj">
-                                        <rect key="frame" x="5" y="5" width="290" height="140"/>
+                                        <rect key="frame" x="5" y="5" width="384" height="140"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="20"/>
@@ -106,9 +95,12 @@
                                     <constraint firstAttribute="height" constant="150" id="s3i-ez-sfh"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="npJ-fm-vVi">
-                                <rect key="frame" x="10" y="240" width="300" height="25"/>
-                                <state key="normal" image="icons8-translation"/>
+                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="npJ-fm-vVi">
+                                <rect key="frame" x="10" y="240" width="394" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="HSv-2Y-E8i"/>
+                                </constraints>
+                                <state key="normal" image="translator_button"/>
                                 <connections>
                                     <action selector="translateLanguage:" destination="wT3-Wm-N42" eventType="touchUpInside" id="13L-4V-RhF"/>
                                 </connections>
@@ -137,12 +129,12 @@
                         </connections>
                     </view>
                     <navigationItem key="navigationItem" id="geB-2m-SxE">
-                        <barButtonItem key="leftBarButtonItem" title="Detection Langue" id="3w6-Gt-kW2">
+                        <barButtonItem key="leftBarButtonItem" title="Detect language" id="3w6-Gt-kW2">
                             <connections>
                                 <action selector="detectLanguage:" destination="wT3-Wm-N42" id="jZ5-Gc-EmL"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Choix Langue" id="Es8-Mk-SNz">
+                        <barButtonItem key="rightBarButtonItem" title="Select Language" id="Es8-Mk-SNz">
                             <connections>
                                 <action selector="getLanguageListBtn:" destination="wT3-Wm-N42" id="jYx-eU-fn4"/>
                             </connections>
@@ -168,29 +160,29 @@
             <objects>
                 <viewController id="gUp-dA-aDq" customClass="LanguagesViewController" customModule="Le_baluchon" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aDV-2c-MZm">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vqC-Sy-7yX">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="LanguageCell" textLabel="RfM-op-eCJ" detailTextLabel="bqp-gS-3Dv" style="IBUITableViewCellStyleSubtitle" id="APT-Pb-dzJ">
-                                        <rect key="frame" x="0.0" y="28" width="320" height="55.5"/>
+                                        <rect key="frame" x="0.0" y="28" width="414" height="55.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="APT-Pb-dzJ" id="JrL-If-xg4">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="55.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="55.666667938232422"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="RfM-op-eCJ">
-                                                    <rect key="frame" x="15" y="10" width="33.5" height="20.5"/>
+                                                    <rect key="frame" x="20.000000000000004" y="8.9999999999999982" width="33.333333333333336" height="20.333333333333332"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="bqp-gS-3Dv">
-                                                    <rect key="frame" x="15" y="31.5" width="44" height="14.5"/>
+                                                    <rect key="frame" x="19.999999999999996" y="31.333333333333332" width="43.666666666666664" height="14.333333333333334"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <nil key="textColor"/>
@@ -224,13 +216,13 @@
             </objects>
             <point key="canvasLocation" x="2190" y="-218"/>
         </scene>
-        <!--Traducteur-->
+        <!--Traductor-->
         <scene sceneID="cZK-iM-h89">
             <objects>
                 <navigationController id="I6h-mD-WWE" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Traducteur" image="icons8-translation" id="5W1-Xn-3Kp"/>
+                    <tabBarItem key="tabBarItem" title="Traductor" image="translation_icon" id="5W1-Xn-3Kp"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="AXL-kw-dJi">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </navigationBar>
@@ -242,44 +234,44 @@
             </objects>
             <point key="canvasLocation" x="334" y="-217"/>
         </scene>
-        <!--Meteo-->
+        <!--Weather-->
         <scene sceneID="Fa8-bY-6hc">
             <objects>
                 <viewController id="Qn5-iI-Grp" customClass="WeatherViewController" customModule="Le_baluchon" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="COA-hV-c6w">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Comparateur de meteo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="eC3-hV-DQm">
-                                <rect key="frame" x="20" y="20" width="280" height="30"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weather comparator" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="eC3-hV-DQm">
+                                <rect key="frame" x="20" y="64" width="374" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="nUs-K8-Tju"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="NightStillComes-Bold" family="Night Still Comes" pointSize="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MZ9-Jg-2EI" customClass="ShadowView" customModule="Le_baluchon" customModuleProvider="target">
-                                <rect key="frame" x="20" y="65" width="280" height="200"/>
+                                <rect key="frame" x="20" y="109" width="374" height="200"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2xj-kH-drQ">
-                                        <rect key="frame" x="10" y="10" width="260" height="30"/>
+                                        <rect key="frame" x="10" y="10" width="354" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="feA-rk-efW"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="NightStillComes-Bold" family="Night Still Comes" pointSize="30"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                         <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="l6x-rP-E7u">
-                                        <rect key="frame" x="170" y="50" width="100" height="100"/>
+                                        <rect key="frame" x="264" y="50" width="100" height="100"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="100" id="GRf-Fx-iWH"/>
                                             <constraint firstAttribute="width" constant="100" id="gnU-OD-VIl"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rfy-eG-bpI">
-                                        <rect key="frame" x="10" y="50" width="150" height="100"/>
+                                        <rect key="frame" x="10" y="50" width="244" height="100"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="100" id="nSp-nR-6Z5"/>
                                         </constraints>
@@ -288,11 +280,11 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J7G-rY-51Q">
-                                        <rect key="frame" x="10" y="165" width="260" height="25"/>
+                                        <rect key="frame" x="10" y="165" width="354" height="25"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="25" id="Yoa-4R-MsB"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="NightStillComes-Italic" family="Night Still Comes" pointSize="25"/>
+                                        <fontDescription key="fontDescription" type="italicSystem" pointSize="25"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -314,26 +306,26 @@
                                 </constraints>
                             </view>
                             <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kDB-Wl-7cg" customClass="ShadowView" customModule="Le_baluchon" customModuleProvider="target">
-                                <rect key="frame" x="20" y="295" width="280" height="200"/>
+                                <rect key="frame" x="20" y="339" width="374" height="200"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vTL-C6-fFd">
-                                        <rect key="frame" x="170" y="50" width="100" height="100"/>
+                                        <rect key="frame" x="264" y="50" width="100" height="100"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="100" id="K2w-QY-3ht"/>
                                             <constraint firstAttribute="height" constant="100" id="y4s-K4-NOD"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7bm-2P-tUO">
-                                        <rect key="frame" x="10" y="10" width="260" height="30"/>
+                                        <rect key="frame" x="10" y="10" width="354" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="OgI-su-hRd"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="NightStillComes-Bold" family="Night Still Comes" pointSize="30"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                         <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I9p-on-weG">
-                                        <rect key="frame" x="10" y="50" width="150" height="100"/>
+                                        <rect key="frame" x="10" y="50" width="244" height="100"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="100" id="QeS-0O-QF6"/>
                                         </constraints>
@@ -342,11 +334,11 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O3c-fo-xQi">
-                                        <rect key="frame" x="10" y="165" width="260" height="25"/>
+                                        <rect key="frame" x="10" y="165" width="354" height="25"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="25" id="7Ji-KW-Hdt"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="NightStillComes-Italic" family="Night Still Comes" pointSize="25"/>
+                                        <fontDescription key="fontDescription" type="italicSystem" pointSize="25"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -382,7 +374,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="CpT-Lu-ckr"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Meteo" image="icons8-sun_filled" id="6qu-5r-NiE"/>
+                    <tabBarItem key="tabBarItem" title="Weather" image="weather_icon" id="6qu-5r-NiE"/>
                     <connections>
                         <outlet property="city1Label" destination="2xj-kH-drQ" id="cvt-nP-2uJ"/>
                         <outlet property="currentCityLabel" destination="7bm-2P-tUO" id="PRw-ru-wCP"/>
@@ -398,40 +390,40 @@
             </objects>
             <point key="canvasLocation" x="334" y="536"/>
         </scene>
-        <!--Devises-->
+        <!--Currency-->
         <scene sceneID="YLi-eK-dai">
             <objects>
                 <viewController id="9jk-20-c0t" customClass="ConvertViewController" customModule="Le_baluchon" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cQt-4M-O62">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Convertisseur de devises" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="ViF-Z4-lwi">
-                                <rect key="frame" x="20" y="20" width="280" height="40"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Convert Currency" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="ViF-Z4-lwi">
+                                <rect key="frame" x="20" y="64" width="374" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="Pmr-qX-JcI"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="NightStillComes-Bold" family="Night Still Comes" pointSize="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="MAg-Ug-MCa">
-                                <rect key="frame" x="20" y="80" width="280" height="325"/>
+                                <rect key="frame" x="20" y="124" width="374" height="375"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xyo-iQ-SsO">
-                                        <rect key="frame" x="0.0" y="0.0" width="280" height="100"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="100"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Convertir des euros en Dollars" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="tHN-YC-ZMe">
-                                                <rect key="frame" x="20" y="0.0" width="240" height="30"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Convert euros to dollars" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="tHN-YC-ZMe">
+                                                <rect key="frame" x="20" y="0.0" width="334" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="fCm-DY-F1D"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" name="NightStillComes" family="Night Still Comes" pointSize="25"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="20" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="9U0-eM-tf2">
-                                                <rect key="frame" x="0.0" y="38" width="280" height="54"/>
+                                                <rect key="frame" x="0.0" y="38" width="374" height="54"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                                 <connections>
@@ -452,9 +444,9 @@
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5vf-ZH-r9x">
-                                        <rect key="frame" x="0.0" y="150" width="280" height="50"/>
+                                        <rect key="frame" x="0.0" y="150" width="374" height="100"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" image="icons8-currency_exchange_filled">
+                                        <state key="normal" image="dollar_euro_exchange_white">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
@@ -462,10 +454,10 @@
                                         </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kQy-Y9-4mS">
-                                        <rect key="frame" x="0.0" y="250" width="280" height="75"/>
+                                        <rect key="frame" x="0.0" y="300" width="374" height="75"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CMG-Jj-3an">
-                                                <rect key="frame" x="0.0" y="10" width="280" height="65"/>
+                                                <rect key="frame" x="0.0" y="10" width="374" height="65"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" name="Symbol" family="Symbol" pointSize="30"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -500,7 +492,7 @@
                             <outletCollection property="gestureRecognizers" destination="0Fq-uZ-zdw" appends="YES" id="HE7-dn-2Ep"/>
                         </connections>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Devises" image="icons8-dollar_sign_7" id="EHX-sK-1MZ"/>
+                    <tabBarItem key="tabBarItem" title="Currency" image="currency" id="EHX-sK-1MZ"/>
                     <connections>
                         <outlet property="convertResultLabel" destination="CMG-Jj-3an" id="3bF-0x-xHQ"/>
                         <outlet property="dataTextField" destination="9U0-eM-tf2" id="wvE-Q7-pBa"/>
@@ -517,9 +509,10 @@
         </scene>
     </scenes>
     <resources>
-        <image name="icons8-currency_exchange_filled" width="50" height="50"/>
-        <image name="icons8-dollar_sign_7" width="25" height="25"/>
-        <image name="icons8-sun_filled" width="25" height="25"/>
-        <image name="icons8-translation" width="25" height="25"/>
+        <image name="currency" width="32" height="24"/>
+        <image name="dollar_euro_exchange_white" width="100" height="100"/>
+        <image name="translation_icon" width="32" height="32"/>
+        <image name="translator_button" width="50" height="45"/>
+        <image name="weather_icon" width="32" height="25"/>
     </resources>
 </document>

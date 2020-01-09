@@ -20,7 +20,7 @@
 /* Class = "UILabel"; text = "Label"; ObjectID = "O3c-fo-xQi"; */
 "O3c-fo-xQi.text" = "Label";
 
-/* Class = "UILabel"; text = "Convertisseur de devises"; ObjectID = "ViF-Z4-lwi"; */
+/* Class = "UILabel"; text = "Convert Currency"; ObjectID = "ViF-Z4-lwi"; */
 "ViF-Z4-lwi.text" = "Convertisseur de devises";
 
 /* Class = "UILabel"; text = "Traducteur de langues"; ObjectID = "Zg7-uV-LmB"; */
@@ -35,5 +35,7 @@
 /* Class = "UILabel"; text = "Convertir des euros en Dollars"; ObjectID = "tHN-YC-ZMe"; */
 "tHN-YC-ZMe.text" = "Convertir des euros en Dollars";
 
-/* Class = "UITabBarItem"; title = "Traducteur"; ObjectID = "ttM-Wt-2eS"; */
-"ttM-Wt-2eS.title" = "Traducteur";
+/* Class = "UITabBarItem"; title = "Traductor"; ObjectID = "ttM-Wt-2eS"; */
+"5W1-Xn-3Kp.title" = "Traducteur";
+"3w6-Gt-kW2.title" = "Detecteur de langue";
+"Es8-Mk-SNz.title" = "Choix de la langue";

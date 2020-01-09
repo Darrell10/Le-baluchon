@@ -10,15 +10,15 @@ import XCTest
 @testable import Le_baluchon
 
 class DeviseServiceTestCase: XCTestCase {
-    var urlParams = [String: String]()
+    var currency = "USD"
     
     func testGetDeviseShouldPostFailedCallbackError() {
-        let devisesService = DeviseService(
+        let devisesService = CurrencyService(
             convertSession: URLSessionFake(data: nil, response: nil, error: FakeResponseData.errorConvert))
         
         let expectation = XCTestExpectation(description: "wait for queue change")
         
-        devisesService.getCurrency(usingTranslationAPI: .currency, urlParams: urlParams) { (devise) in
+        devisesService.getCurrency(currency: currency) { (devise) in
             XCTAssertNotNil(NetWorkError.noData)
             expectation.fulfill()
         }
@@ -26,12 +26,12 @@ class DeviseServiceTestCase: XCTestCase {
     }
     
     func testGetDeviseShouldPostFailedCallbackIncorrectResponse() {
-        let devisesService = DeviseService(
+        let devisesService = CurrencyService(
             convertSession: URLSessionFake(data: FakeResponseData.ConvertCorrectData, response: FakeResponseData.responseKO, error: nil))
         
         let expectation = XCTestExpectation(description: "wait for queue change")
         
-        devisesService.getCurrency(usingTranslationAPI: .currency, urlParams: urlParams) { (devise) in
+        devisesService.getCurrency(currency: currency) { (devise) in
             XCTAssertNotNil(NetWorkError.badUrl)
             expectation.fulfill()
         }
@@ -39,12 +39,12 @@ class DeviseServiceTestCase: XCTestCase {
     }
     
     func testGetDeviseShouldPostFailedCallbackIncorrectData() {
-        let devisesService = DeviseService(
+        let devisesService = CurrencyService(
             convertSession: URLSessionFake(data: FakeResponseData.ConvertIncorrectData, response: FakeResponseData.responseOK, error: nil))
         
         let expectation = XCTestExpectation(description: "wait for queue change")
         
-        devisesService.getCurrency(usingTranslationAPI: .currency, urlParams: urlParams) { (devise) in
+        devisesService.getCurrency(currency: currency) { (devise) in
             XCTAssertNotNil(NetWorkError.jsonError)
             expectation.fulfill()
         }
@@ -52,18 +52,17 @@ class DeviseServiceTestCase: XCTestCase {
     }
     
     func testGetQuoteShouldPostSuccessCallbackIfNoErrorAndCorrectData() {
-        let devisesService = DeviseService(
+        let devisesService = CurrencyService(
             convertSession: URLSessionFake(data: FakeResponseData.ConvertCorrectData, response: FakeResponseData.responseOK, error: nil))
         
         let expectation = XCTestExpectation(description: "wait for queue change")
         
-        devisesService.getCurrency(usingTranslationAPI: .currency, urlParams: urlParams) { (devise) in
-            
-//            let date = "2019-11-23"
-//            let rates = ["USD": 1.10213]
-//            XCTAssertEqual(date, devise.)
-//            XCTAssertEqual(rates, devise.rates)
-            XCTAssertNotNil(devise)
+        devisesService.getCurrency(currency: currency) { result in
+         guard case .success(let decodedData) = result else {
+                XCTFail("Test request method with an error failed.")
+                return
+            }
+            XCTAssertTrue(decodedData.rates["USD"] == 1.10213)
             expectation.fulfill()
         }
         wait(for: [expectation], timeout: 0.01)

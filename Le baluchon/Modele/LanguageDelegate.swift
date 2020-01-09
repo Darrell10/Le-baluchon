@@ -8,6 +8,4 @@
 
 import Foundation
 
-protocol LanguageDelegate {
-    func passLanguageBack(_ languageCode: String)
-}
+

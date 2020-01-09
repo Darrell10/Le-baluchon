@@ -9,12 +9,12 @@
 import UIKit
 import AVFoundation
 
-class EditorViewController: UIViewController {
+final class EditorViewController: UIViewController {
     
     // MARK: - Property
     
     private let translateService = TranslateService()
-    private var codeLanguage = ""
+    private var codeLanguage = "en"
     
     @IBOutlet weak var editorTextView: UITextView!
     @IBOutlet weak var translateTextView: UITextView!
@@ -31,7 +31,7 @@ extension EditorViewController: LanguageDelegate {
     @IBAction func detectLanguage(_ sender: Any) {
         if editorTextView.text == "" {
             //present an alert if text view is empty
-            self.presentAlert(title: "Detection de la langue", message: "le texte est vide !")
+            self.presentAlert(title: "Detect Language", message: "Text is empty")
         } else {
             detectionLang()
         }
@@ -44,12 +44,11 @@ extension EditorViewController: LanguageDelegate {
             DispatchQueue.main.async {
                 switch result {
                 case .success(let results):
-                    print(results)
                     guard let data = results.data.detections.first else { return }
                     guard let language = data.first?.language else { return }
-                    self.presentAlert(title: "Detection de la langue", message: "Le langage suivant a été détecté:\n\n\(language)")
+                    self.presentAlert(title: "Detect Language", message: "Language detected is:\n\n\(language)")
                 case .failure:
-                    self.presentAlert(title: "Detection de la langue", message: "Oops! le language n'a pas été détecté.")
+                    self.presentAlert(title: "Detect Language", message: "Oops! language was not deteted.")
                 }
             }
         }
@@ -78,7 +77,7 @@ extension EditorViewController {
     @IBAction private func translateLanguage(_ sender: Any) {
         if editorTextView.text == "" {
             //present an alert if text view is empty
-            self.presentAlert(title: "Detection de la langue", message: "le texte est vide !")
+            self.presentAlert(title: "Translation", message: "text is empty! ")
         } else {
             initiateTranslation()
         }
@@ -95,7 +94,7 @@ extension EditorViewController {
                         self.speak()
                     }
                 case .failure:
-                    self.presentAlert(title: "Erreur", message: "Les données ont échouées")
+                    self.presentAlert(title: "Error", message: "Data failed")
                 }
             }
         }
@@ -120,6 +119,7 @@ extension EditorViewController : UITextFieldDelegate{
     @IBAction func dismissKeyboard(_ sender: UITapGestureRecognizer) {
         editorTextView.resignFirstResponder()
     }
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true

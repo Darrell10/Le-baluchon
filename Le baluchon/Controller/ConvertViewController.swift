@@ -12,7 +12,7 @@ final class ConvertViewController: UIViewController {
     
     // MARK: - Property
     
-    private let deviseService = DeviseService()
+    private let currencyService = CurrencyService()
     
     @IBOutlet private weak var dataTextField: UITextField!
     @IBOutlet private weak var convertResultLabel: UILabel!
@@ -25,7 +25,7 @@ final class ConvertViewController: UIViewController {
     
     private func convertDevise() {
         guard let amount = dataTextField.text, let number = Double(amount) else { return }
-        deviseService.getCurrency(currency: "USD") { [unowned self] result in
+        currencyService.getCurrency(currency: "USD") { [unowned self] result in
             DispatchQueue.main.async {
                 switch result {
                 case .success(let ratesData):
@@ -46,6 +46,7 @@ extension ConvertViewController : UITextFieldDelegate{
     @IBAction func dismissKeyboard(_ sender: UITapGestureRecognizer) {
         dataTextField.resignFirstResponder()
     }
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
